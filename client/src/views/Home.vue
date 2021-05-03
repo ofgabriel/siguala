@@ -1,5 +1,7 @@
 <template>
-  <hello-world />
+  <v-container>
+    <hello-world />
+  </v-container>
 </template>
 
 <script>

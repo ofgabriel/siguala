@@ -4,36 +4,18 @@
       app
       color="primary"
       dark
+      elevate-on-scroll
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
+      <router-link :to="{ name: 'Home' }">
+        <v-toolbar-title class="white--text pr-10">
+          Selo diversidade
+        </v-toolbar-title>
+      </router-link>
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
         text
+        :to="{ name: 'About' }"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        About
       </v-btn>
     </v-app-bar>
 
@@ -44,7 +26,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
