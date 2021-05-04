@@ -1,0 +1,7 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["vue", "html", "javascript"],
+  "eslint.workingDirectories": ["./client"],
+}
