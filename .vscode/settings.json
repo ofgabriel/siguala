@@ -3,5 +3,8 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["vue", "html", "javascript"],
-  "eslint.workingDirectories": ["./client"],
+  "eslint.workingDirectories": [
+    "./client"
+  ],
+  "python.pythonPath": "c:\\Users\\Lucas\\OneDrive - poli.ufrj.br\\Área de Trabalho\\UFRJ\\Engenharia de Software\\Selo Diversidade\\env_selo\\Scripts\\python.exe",
 }
