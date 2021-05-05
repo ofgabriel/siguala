@@ -10,3 +10,14 @@ services:
     volumes:
        - ./client:/usr/src/app/client
        - /usr/src/app/client/node_modules
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: backend
+    command: python backend/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
