@@ -3,8 +3,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import vuetify from './plugins/vuetify';
+import titulo from './mixins/titulo';
 
 Vue.config.productionTip = false;
+Vue.mixin(titulo);
 
 new Vue({
   router,

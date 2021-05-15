@@ -1,17 +1,18 @@
 <template>
   <v-container>
-    <hello-world />
+    <informacoes-basicas />
   </v-container>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue';
+import InformacoesBasicas from '../components/InformacoesBasicas.vue';
 
 export default {
   name: 'Home',
+  titulo: 'Selo Diversidade - Home',
 
   components: {
-    HelloWorld,
+    InformacoesBasicas,
   },
 };
 </script>
