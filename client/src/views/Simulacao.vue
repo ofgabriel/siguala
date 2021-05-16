@@ -12,13 +12,20 @@
         lg="3"
         align="end"
       >
-        <trilha :etapa-atual="etapaAtual" />
+        <trilha
+          :etapas="etapas"
+          :etapa-atual="etapaAtual"
+        />
       </v-col>
       <v-col
         cols="6"
         lg="6"
       >
-        Aqui o conteúdo do formulário
+        <formulario
+          :etapas="etapas"
+          :etapa-atual="etapaAtual"
+          @mudancaDeEtapa="atualizaEtapa"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -27,16 +34,25 @@
 <script>
 
 import Trilha from '../components/Trilha.vue';
+import Formulario from '../components/Formulario.vue';
+import mock from '../../assets/formMock';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
   components: {
     Trilha,
+    Formulario,
   },
   data() {
     return {
-      etapaAtual: 3, // esse valor deve vir da Vuex.
+      etapas: mock.etapas,
+      etapaAtual: 1, // esse valor deve vir da Vuex.
     };
+  },
+  methods: {
+    atualizaEtapa(novaEtapa) {
+      this.etapaAtual = novaEtapa;
+    },
   },
 };
 </script>
