@@ -35,7 +35,7 @@
 
 import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
-import mock from '../../assets/formMock';
+import dadosSimulacao from '../assets/dadosSimulacao';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
@@ -45,8 +45,8 @@ export default {
   },
   data() {
     return {
-      etapas: mock.etapas,
-      etapaAtual: 1, // esse valor deve vir da Vuex.
+      etapas: dadosSimulacao.etapas,
+      etapaAtual: 1,
     };
   },
   methods: {
