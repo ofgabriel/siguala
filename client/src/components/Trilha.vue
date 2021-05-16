@@ -1,40 +1,76 @@
 <template>
-  <v-timeline
-    dense
-    reverse
-  >
-    <v-timeline-item
-      v-for="(etapa, i) in etapas"
-      :key="i"
-      class="my-4"
-      :color="getStepBackgroudColor(etapa.numero)"
-      :large="etapa.numero == etapaAtual"
-      fill-dot
+  <div>
+    <v-row
+      v-if="$vuetify.breakpoint.smAndDown"
+      justify="space-between"
+      align="center"
+      class="px-5"
     >
       <template
-        v-slot:icon
+        v-for="(etapa, i) in etapas"
+        class="d-flex"
       >
-        <v-icon
-          v-if="etapa.numero < etapaAtual"
-          color="white"
+        <v-btn
+          :key="`btn-${i}`"
+          x-small
+          fab
+          :color="getStepBackgroudColor(etapa.numero)"
         >
-          mdi-check
-        </v-icon>
-        <span
-          v-else
-          :class="getStepTextColor(etapa.numero)"
-        >{{ etapa.numero }}</span>
+          <v-icon
+            v-if="etapa.numero < etapaAtual"
+            color="white"
+          >
+            mdi-check
+          </v-icon>
+          <span
+            v-else
+            :class="getStepTextColor(etapa.numero)"
+          >{{ etapa.numero }}</span>
+        </v-btn>
+        <v-divider
+          v-if="i + 1 < etapas.length"
+          :key="`divder-${i}`"
+        />
       </template>
-      <v-row>
-        <v-col>
-          <strong>{{ etapa.nome }}</strong>
-          <div class="caption">
-            {{ etapa.descricao }}
-          </div>
-        </v-col>
-      </v-row>
-    </v-timeline-item>
-  </v-timeline>
+    </v-row>
+    <v-timeline
+      v-else
+      dense
+      reverse
+    >
+      <v-timeline-item
+        v-for="(etapa, i) in etapas"
+        :key="i"
+        class="my-4"
+        :color="getStepBackgroudColor(etapa.numero)"
+        :large="etapa.numero == etapaAtual"
+        fill-dot
+      >
+        <template
+          v-slot:icon
+        >
+          <v-icon
+            v-if="etapa.numero < etapaAtual"
+            color="white"
+          >
+            mdi-check
+          </v-icon>
+          <span
+            v-else
+            :class="getStepTextColor(etapa.numero)"
+          >{{ etapa.numero }}</span>
+        </template>
+        <v-row>
+          <v-col>
+            <strong>{{ etapa.nome }}</strong>
+            <div class="caption">
+              {{ etapa.descricao }}
+            </div>
+          </v-col>
+        </v-row>
+      </v-timeline-item>
+    </v-timeline>
+  </div>
 </template>
 
 <script>
@@ -42,7 +78,7 @@ export default {
   name: 'Trilha',
   props: {
     etapas: {
-      type: Object,
+      type: Array,
       required: true,
     },
     etapaAtual: {

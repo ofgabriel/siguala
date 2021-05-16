@@ -38,7 +38,7 @@ export default {
   name: 'Formulario',
   props: {
     etapas: {
-      type: Object,
+      type: Array,
       required: true,
     },
     etapaAtual: {
