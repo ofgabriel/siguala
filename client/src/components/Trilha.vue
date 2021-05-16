@@ -4,7 +4,7 @@
       v-if="$vuetify.breakpoint.smAndDown"
       justify="space-between"
       align="center"
-      class="px-5 mb-2"
+      class="px-5"
     >
       <template
         v-for="(etapa, i) in etapas"
@@ -30,8 +30,6 @@
         <v-divider
           v-if="i + 1 < etapas.length"
           :key="`divder-${i}`"
-          role="presentation"
-          light
         />
       </template>
     </v-row>
