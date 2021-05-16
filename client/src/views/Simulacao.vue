@@ -1,22 +1,22 @@
 <template>
   <v-container>
-    <h1 class="text-center">
-      Página para a simulaçao do Selo
-    </h1>
+    <h2 class="text-center">
+      Simulação
+    </h2>
     <v-row
-      class="conteudo mt-4"
+      class="mt-4"
       justify="center"
     >
       <v-col
-        cols="3"
-        lg="3"
+        cols="12"
+        md="3"
         align="end"
       >
         <trilha :etapa-atual="etapaAtual" />
       </v-col>
       <v-col
-        cols="6"
-        lg="6"
+        cols="12"
+        md="6"
       >
         Aqui o conteúdo do formulário
       </v-col>
