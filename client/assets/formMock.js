@@ -1,6 +1,6 @@
 export default {
-  etapas: {
-    1: {
+  etapas: [
+    {
       numero: 1,
       nome: 'Aceite da Verificação',
       descricao: 'Alguma descrição dessa etapa',
@@ -16,7 +16,7 @@ export default {
         },
       ],
     },
-    2: {
+    {
       numero: 2,
       nome: 'Equipe de Implementação',
       descricao: 'Alguma descrição dessa etapa',
@@ -32,7 +32,7 @@ export default {
         },
       ],
     },
-    3: {
+    {
       numero: 3,
       nome: 'Análise da Empresa',
       descricao: 'Alguma descrição dessa etapa',
@@ -48,7 +48,7 @@ export default {
         },
       ],
     },
-    4: {
+    {
       numero: 4,
       nome: 'Plano de Ação',
       descricao: 'Alguma descrição dessa etapa',
@@ -64,7 +64,7 @@ export default {
         },
       ],
     },
-    5: {
+    {
       numero: 5,
       nome: 'Política de Igualdade de Gênero',
       descricao: 'Alguma descrição dessa etapa',
@@ -80,5 +80,5 @@ export default {
         },
       ],
     },
-  },
+  ],
 };

@@ -80,7 +80,7 @@ export default {
   name: 'Trilha',
   props: {
     etapas: {
-      type: Object,
+      type: Array,
       required: true,
     },
     etapaAtual: {
