@@ -79,6 +79,10 @@
 export default {
   name: 'Trilha',
   props: {
+    etapas: {
+      type: Object,
+      required: true,
+    },
     etapaAtual: {
       type: Number,
       required: true,
@@ -86,33 +90,7 @@ export default {
   },
   data() {
     return {
-      etapas: [
-        {
-          numero: 1,
-          nome: 'Aceite da Verificação',
-          descricao: 'Alguma descrição dessa etapa',
-        },
-        {
-          numero: 2,
-          nome: 'Equipe de Implementação',
-          descricao: 'Alguma descrição dessa etapa',
-        },
-        {
-          numero: 3,
-          nome: 'Análise da Empresa',
-          descricao: 'Alguma descrição dessa etapa',
-        },
-        {
-          numero: 4,
-          nome: 'Plano de Ação',
-          descricao: 'Alguma descrição dessa etapa',
-        },
-        {
-          numero: 5,
-          nome: 'Política de Igualdade de Gênero',
-          descricao: 'Alguma descrição dessa etapa',
-        },
-      ],
+
     };
   },
   methods: {
