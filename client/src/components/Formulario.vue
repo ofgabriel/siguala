@@ -1,24 +1,22 @@
 <template>
   <div>
-    <v-radio-group
-      v-for="(campo, index) in etapas[etapaAtual].campos"
-      :key="index"
-      v-model="campo.valor"
-      mandatory
+    <div
+      v-for="topico, topicosIndex in conteudoEtapaAtual.topicos"
+      :key="`topico-${topicosIndex}`"
+      class="mb-4"
     >
-      <template v-slot:label>
-        <h3>{{ campo.pergunta }}</h3>
-      </template>
-      <v-radio
-        v-for="(opcao, indexOpcao) in opcoes"
-        :key="indexOpcao"
-        :value="opcao.value"
-      >
-        <template v-slot:label>
-          <div>{{ opcao.label }}</div>
-        </template>
-      </v-radio>
-    </v-radio-group>
+      <div class="title">
+        {{ topico.nome }}
+      </div>
+      <v-divider :key="`divider-${topicosIndex}`" />
+      <pergunta
+        v-for="item, itemIndex in topico.itens"
+        :key="`pergunta-${itemIndex}-topico-${topicosIndex}-etapa-${etapaAtual}`"
+        class="ml-8"
+        :pergunta="item.pergunta"
+        @resposta="atualizaResposta($event, topicosIndex, itemIndex)"
+      />
+    </div>
     <v-btn
       :color="botao.cor"
       class="float-right"
@@ -34,8 +32,13 @@
 
 <script>
 
+import Pergunta from './Pergunta.vue';
+
 export default {
   name: 'Formulario',
+  components: {
+    Pergunta,
+  },
   props: {
     etapas: {
       type: Array,
@@ -48,17 +51,6 @@ export default {
   },
   data() {
     return {
-      radios: null,
-      opcoes: [
-        {
-          label: 'Sim',
-          value: true,
-        },
-        {
-          label: 'Não',
-          value: false,
-        },
-      ],
     };
   },
   computed: {
@@ -86,6 +78,9 @@ export default {
         acao: this.submeter,
       };
     },
+    conteudoEtapaAtual() {
+      return this.etapas.find((etapa) => etapa.numero === this.etapaAtual);
+    },
   },
   methods: {
     mudancaDeEtapa() {
@@ -93,6 +88,10 @@ export default {
     },
     submeter() {
       alert('Formulário submetido!');
+    },
+    atualizaResposta($event, topicosIndex, itemIndex) {
+      this
+        .etapas[this.etapaAtual - 1].topicos[topicosIndex].itens[itemIndex].resposta = $event;
     },
   },
 };
