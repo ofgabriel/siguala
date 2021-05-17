@@ -65,6 +65,8 @@ export default {
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
+      var element = this.$el.querySelector("#formulario");
+      element.scrollTop = 0;
     },
   },
 };
