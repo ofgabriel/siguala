@@ -18,6 +18,17 @@
       />
     </div>
     <v-btn
+      v-if="this.etapaAtual > 1 && this.etapaAtual < Object.keys(this.etapas).length+1"
+      :color="botaoVolta.cor"
+      class="float-left"
+      @click="botaoVolta.acao"
+    >
+      <v-icon left>
+        mdi-{{ botaoVolta.icone }}
+      </v-icon>
+      {{ botaoVolta.texto }}
+    </v-btn>
+    <v-btn
       :color="botao.cor"
       class="float-right"
       @click="botao.acao"
@@ -61,6 +72,20 @@ export default {
 
       return null;
     },
+     etapaAnterior() {
+      if ((this.etapaAtual - 1) in this.etapas) {
+        return this.etapaAtual - 1;
+      }
+      return null;
+    },
+    botaoVolta() {
+      return {
+        cor: 'success',
+        icone: 'arrow-up-thick',
+        texto: 'Etapa anterior',
+        acao: this.voltarEtapa,
+      };
+    },
     botao() {
       if (this.proximaEtapa) {
         return {
@@ -83,11 +108,19 @@ export default {
     },
   },
   methods: {
+    voltarEtapa() {
+      this.$emit('mudancaDeEtapa', this.etapaAnterior);
+    },
     mudancaDeEtapa() {
+      this.etapas[this.etapaAtual-1].respondida = true;
+      this.etapas[this.etapaAtual].visitada = true;
+      this.etapas[this.etapaAtual-1].visitada = true;
       this.$emit('mudancaDeEtapa', this.proximaEtapa);
     },
     submeter() {
+      this.etapas[this.etapaAtual-1].respondida = true;
       alert('Formulário submetido!');
+      this.$emit('mudancaDeEtapa', Object.keys(this.etapas).length+1 );
     },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this
