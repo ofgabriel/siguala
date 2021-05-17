@@ -18,8 +18,7 @@
       />
     </div>
     <v-btn
-      :color="
-        botao.cor"
+      :color="botao.cor"
       class="float-right"
       @click="botao.acao"
     >
