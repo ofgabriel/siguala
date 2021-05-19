@@ -131,17 +131,8 @@ export default {
 </script>
 
 <style>
-@media only screen and (min-width: 600px) {
-  #formulario {
-    overflow-y: scroll;
-    max-height: 640px;
-  }
+#formulario {
+  overflow-y: scroll;
+  max-height: 75vh;
 }
-@media only screen and (max-width: 600px) {
-  #formulario {
-    overflow-y: scroll;
-    max-height: 75vh;
-  }
-}
-
 </style>

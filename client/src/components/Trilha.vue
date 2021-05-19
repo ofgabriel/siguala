@@ -103,9 +103,6 @@ export default {
       if (stepNumber === this.etapaAtual) {
         return 'primary';
       }
-      // if (stepNumber < this.etapaAtual) {
-      //   return 'success';
-      // }
       if (visitada){
         if (respondida){
           return 'success';
@@ -133,6 +130,5 @@ export default {
 }
 .warning {
   cursor: pointer;
-  background-color: darkorange;
 }
 </style>
