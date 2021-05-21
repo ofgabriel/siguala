@@ -1,5 +1,5 @@
 <template>
-  <div id="formulario">
+  <div>
     <div
       v-for="topico, topicosIndex in conteudoEtapaAtual.topicos"
       :key="`topico-${topicosIndex}`"
@@ -131,8 +131,5 @@ export default {
 </script>
 
 <style>
-#formulario {
-  overflow-y: scroll;
-  max-height: 75vh;
-}
+
 </style>

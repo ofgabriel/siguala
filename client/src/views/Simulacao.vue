@@ -8,6 +8,7 @@
       justify="center"
     >
       <v-col
+        id="trilha"
         cols="12"
         md="3"
         align="end"
@@ -22,6 +23,7 @@
         v-if="this.etapaAtual<Object.keys(this.etapas).length+1"
         cols="12"
         md="6"
+        class="formulario"
       >
         <formulario
           :etapas="etapas"
@@ -33,10 +35,11 @@
         v-else
         cols="6"
         lg="6"
+        class="formulario"
       >
         <exibir-resultado
-          v-bind:padrao="1"
-          v-bind:pontuacao="100" />
+          :padrao="1"
+          :pontuacao="100" />
       </v-col>
     </v-row>
   </v-container>
@@ -71,3 +74,30 @@ export default {
   },
 };
 </script>
+<style>
+@media only screen and (min-width: 960px) {
+  .formulario {
+    margin-left:40%;
+    display: block;
+  }
+  #trilha {
+    left:16%;
+    position:fixed
+  }
+}
+@media only screen and (max-width: 959px) {
+  .formulario {
+    display: block;
+  }
+  #trilha {
+    position:sticky;
+    /* display: block; */
+    top:50px;
+    z-index: 1;
+    background-color: white;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+}
+
+</style>
