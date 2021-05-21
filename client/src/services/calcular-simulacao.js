@@ -22,15 +22,15 @@ export default function (
     }
   });
 
-  let selo = null;
+  let selo = 0;
   if (pontos >= pontosNecessariosParaSeloBronze) {
-    selo = 'bronze';
+    selo = 3;
   }
   if (pontos >= pontosNecessariosParaSeloPrata) {
-    selo = 'prata';
+    selo = 2;
   }
   if (pontos >= pontosNecessariosParaSeloOuro && simParaTodasDoSeloOuro) {
-    selo = 'ouro';
+    selo = 1;
   }
 
   return {

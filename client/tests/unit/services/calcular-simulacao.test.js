@@ -52,7 +52,7 @@ describe('Calcular Resultado', () => {
 
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
-    expect(resultado.selo).toBe('bronze');
+    expect(resultado.selo).toBe(3); // bronze
     expect(resultado.pontos).toBe(1);
   });
 
@@ -107,7 +107,7 @@ describe('Calcular Resultado', () => {
 
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
-    expect(resultado.selo).toBe('prata');
+    expect(resultado.selo).toBe(2); // prata
     expect(resultado.pontos).toBe(2);
   });
 
@@ -162,7 +162,7 @@ describe('Calcular Resultado', () => {
 
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
-    expect(resultado.selo).toBe('prata');
+    expect(resultado.selo).toBe(2); // prata
     expect(resultado.pontos).toBe(3);
   });
 
@@ -217,7 +217,7 @@ describe('Calcular Resultado', () => {
 
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
-    expect(resultado.selo).toBe('ouro');
+    expect(resultado.selo).toBe(1); // ouro
     expect(resultado.pontos).toBe(3);
   });
 
@@ -272,7 +272,7 @@ describe('Calcular Resultado', () => {
 
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
-    expect(resultado.selo).toBe(null);
+    expect(resultado.selo).toBe(0); // nenhum
     expect(resultado.pontos).toBe(0);
   });
 });
