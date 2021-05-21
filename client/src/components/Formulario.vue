@@ -18,7 +18,7 @@
       />
     </div>
     <v-btn
-      v-if="this.etapaAtual > 1 && this.etapaAtual < Object.keys(this.etapas).length+1"
+      v-if="etapaAtual > 1 && etapaAtual < Object.keys(etapas).length+1"
       :color="botaoVolta.cor"
       class="float-left"
       @click="botaoVolta.acao"

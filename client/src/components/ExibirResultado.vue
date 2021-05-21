@@ -4,7 +4,7 @@
       <p class="msg-resultado">
         <strong>{{labeltxt[padrao]}}</strong>
       </p>
-      <img class="selo-resultado" height="220px" :src="labelsrc[padrao]" />
+      <img class="selo-resultado" :src="labelsrc[padrao]" />
       <p class="msg-resultado">
         Total de pontos: {{pontuacao}}
       </p>
@@ -50,5 +50,6 @@ export default {
 <style >
 img.selo-resultado {
   max-width: 100%;
+  height:220px;
 }
 </style>
