@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     proximaEtapa() {
-      if ((this.etapaAtual + 1) in this.etapas) {
+      if (this.etapas.find((etapa) => etapa.numero === this.etapaAtual + 1)) {
         return this.etapaAtual + 1;
       }
 
