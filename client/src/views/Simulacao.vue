@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="conteudo">
     <h2 class="text-center">
       Simulação
     </h2>
@@ -68,8 +68,9 @@ export default {
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
-      var element = this.$el.querySelector("#formulario");
-      element.scrollTop = 0;
+      // var element = this.$el.querySelector("#conteudo");
+      // element.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
   },
 };
@@ -91,7 +92,6 @@ export default {
   }
   #trilha {
     position:sticky;
-    /* display: block; */
     top:50px;
     z-index: 1;
     background-color: white;

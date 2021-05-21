@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="formulario">
     <div
       v-for="topico, topicosIndex in conteudoEtapaAtual.topicos"
       :key="`topico-${topicosIndex}`"
