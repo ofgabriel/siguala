@@ -13,11 +13,11 @@ export default function (
   let simParaTodasDoSeloOuro = true;
   let pontos = 0;
   itensRespondidos.forEach((item) => {
-    if (item.resposta === true) {
+    if (item.resposta === 'sim') {
       pontos += 1;
     }
 
-    if (item.requisitoSeloOuro && item.resposta === false) {
+    if (item.requisitoSeloOuro && item.resposta === 'nao') {
       simParaTodasDoSeloOuro = false;
     }
   });

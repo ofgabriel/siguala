@@ -31,8 +31,8 @@
 </template>
 
 <script>
-
 import Pergunta from './Pergunta.vue';
+import calcularSimulacao from '../services/calcular-simulacao';
 
 export default {
   name: 'Formulario',
@@ -87,7 +87,8 @@ export default {
       this.$emit('mudancaDeEtapa', this.proximaEtapa);
     },
     submeter() {
-      alert('Formulário submetido!');
+      const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
+      this.$emit('simular', resultado);
     },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this
