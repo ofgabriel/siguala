@@ -68,8 +68,6 @@ export default {
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
-      // var element = this.$el.querySelector("#conteudo");
-      // element.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
   },
@@ -78,12 +76,12 @@ export default {
 <style>
 @media only screen and (min-width: 960px) {
   .formulario {
-    margin-left:40%;
+    margin-left:30%;
     display: block;
   }
   #trilha {
     left:16%;
-    position:fixed
+    position:fixed;
   }
 }
 @media only screen and (max-width: 959px) {
