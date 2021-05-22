@@ -2,17 +2,24 @@
   <v-row class="text-center">
     <v-col cols="12">
       <p class="msg-resultado">
-        <strong>{{labeltxt[padrao]}}</strong>
+        <strong>{{ labeltxt[padrao] }}</strong>
       </p>
-      <img classs="selo-resultado" height="220" :src="labelsrc[padrao]" />
+      <img
+        classs="selo-resultado"
+        height="220"
+        :src="labelsrc[padrao]"
+      >
       <p class="msg-resultado">
-        Total de pontos: {{pontuacao}}
+        Total de pontos: {{ pontuacao }}
       </p>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import imagemSeloOuro from '../../public/SeloOuro.svg';
+import imagemSeloPrata from '../../public/SeloPrata.svg';
+import imagemSeloBronze from '../../public/SeloBronze.svg';
 
 export default {
   name: 'ExibirResultado',
@@ -21,7 +28,7 @@ export default {
       type: Number,
       required: true,
     },
-    pontuacao : {
+    pontuacao: {
       type: Number,
       required: true,
     },
@@ -29,24 +36,24 @@ export default {
   data() {
     return {
       labelsrc: [
-        require('../../public/SeloOuro.svg'),
-        require('../../public/SeloOuro.svg'),
-        require('../../public/SeloPrata.svg'),
-        require('../../public/SeloBronze.svg')
+        imagemSeloOuro,
+        imagemSeloOuro,
+        imagemSeloPrata,
+        imagemSeloBronze,
       ],
       labeltxt: [
         'Infelizmente você não pontuou o necessário para obtenção do selo',
         'Parabéns! Você obteve o selo ouro!',
         'Parabéns! Você obteve o selo prata!',
         'Parabéns! Você obteve o selo bronze!',
-      ]
-    }
+      ],
+    };
   },
   methods: {
 
   },
 };
 </script>
-<style >
 
+<style >
 </style>
