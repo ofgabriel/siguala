@@ -70,7 +70,16 @@ export default {
       this.etapaAtual = novaEtapa;
       document.documentElement.scrollTop = 0;
     },
+    adicionaFlags() {
+      this.etapas.forEach(etapa =>{
+        etapa.respondida = false;
+        etapa.visitada = etapa.numero===1? true:false;
+      })
+    }
   },
+  beforeMount(){
+    this.adicionaFlags()
+ },
 };
 </script>
 <style>

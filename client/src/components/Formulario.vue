@@ -18,7 +18,7 @@
       />
     </div>
     <v-btn
-      v-if="etapaAtual > 1 && etapaAtual < Object.keys(etapas).length+1"
+      v-if="etapaAtual > 1 && etapaAtual < ultimaEtapa"
       :color="botaoVolta.cor"
       class="float-left"
       @click="botaoVolta.acao"
@@ -65,6 +65,9 @@ export default {
     };
   },
   computed: {
+    ultimaEtapa() {
+      return Object.keys(this.etapas).length+1
+    },
     proximaEtapa() {
       if ((this.etapaAtual + 1) in this.etapas) {
         return this.etapaAtual + 1;

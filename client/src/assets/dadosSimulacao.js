@@ -4,8 +4,6 @@ export default {
       numero: 1,
       nome: 'Aceite da Verificação',
       descricao: 'Alguma descrição dessa etapa',
-      respondida: false,
-      visitada: true,
       topicos: [
         {
           nome: 'Contrato',
@@ -23,8 +21,6 @@ export default {
       numero: 2,
       nome: 'Equipe de Implementação',
       descricao: 'Alguma descrição dessa etapa',
-      respondida: false,
-      visitada: false,
       topicos: [
         {
           nome: 'Criação',
@@ -58,8 +54,6 @@ export default {
       numero: 3,
       nome: 'Análise da Empresa',
       descricao: 'Alguma descrição dessa etapa',
-      respondida: false,
-      visitada: false,
       topicos: [
         {
           nome: 'Análise organizacional com perspectiva de gênero',
@@ -97,8 +91,6 @@ export default {
       numero: 4,
       nome: 'Plano de Ação',
       descricao: 'Alguma descrição dessa etapa',
-      respondida: false,
-      visitada: false,
       topicos: [
         {
           nome: 'Plano de Ação Organizacional com Perspectiva de Gênero',
@@ -127,8 +119,6 @@ export default {
       numero: 5,
       nome: 'Política de Igualdade de Gênero',
       descricao: 'Alguma descrição dessa etapa',
-      respondida: false,
-      visitada: false,
       topicos: [
         {
           nome: 'Elaboração da Política de Igualdade de Gênero',
