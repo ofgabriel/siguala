@@ -1,9 +1,13 @@
 <template>
-  <v-container>
-    <h2 class="text-center">
-      Simulação
-    </h2>
+  <v-container class="pt-5">
+    <v-row v-if="resultado">
+      <exibir-resultado
+        :pontuacao="resultado.pontos"
+        :padrao="resultado.selo"
+      />
+    </v-row>
     <v-row
+      v-else
       class="mt-4"
       justify="center"
     >
@@ -24,6 +28,7 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
+          @simular="resultado = $event"
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
@@ -35,6 +40,7 @@
 
 import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
+import ExibirResultado from '../components/ExibirResultado.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
 
 export default {
@@ -42,11 +48,13 @@ export default {
   components: {
     Trilha,
     Formulario,
+    ExibirResultado,
   },
   data() {
     return {
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
+      resultado: null,
     };
   },
   methods: {
