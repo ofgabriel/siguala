@@ -13,6 +13,7 @@
         Total de pontos: {{ pontuacao }}
       </p>
     </v-col>
+    <conteudo-educativo :conteudos="conteudosEducativos" />
   </v-row>
 </template>
 
@@ -20,9 +21,14 @@
 import imagemSeloOuro from '../../public/SeloOuro.svg';
 import imagemSeloPrata from '../../public/SeloPrata.svg';
 import imagemSeloBronze from '../../public/SeloBronze.svg';
+import ConteudoEducativo from './ConteudoEducativo.vue';
+import mockConteudos from '../../assets/mockConteudoEducativo';
 
 export default {
   name: 'ExibirResultado',
+  components: {
+    ConteudoEducativo,
+  },
   props: {
     padrao: {
       type: Number,
@@ -47,6 +53,7 @@ export default {
         'Parabéns! Você obteve o selo prata!',
         'Parabéns! Você obteve o selo bronze!',
       ],
+      conteudosEducativos: mockConteudos.conteudos,
     };
   },
   methods: {
