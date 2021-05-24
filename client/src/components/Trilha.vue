@@ -14,8 +14,8 @@
           :key="`btn-${i}`"
           x-small
           fab
-          @click.native="mudancaDeEtapa(etapa)"
           :color="getStepBackgroudColor(etapa)"
+          @click.native="mudancaDeEtapa(etapa)"
         >
           <v-icon
             v-if="etapa.numero < etapaAtual"
@@ -41,12 +41,12 @@
     >
       <v-timeline-item
         v-for="(etapa, i) in etapas"
-        @click.native="mudancaDeEtapa(etapa)"
         :key="i"
         class="my-4"
         :color="getStepBackgroudColor(etapa)"
         :large="etapa.numero == etapaAtual"
         fill-dot
+        @click.native="mudancaDeEtapa(etapa)"
       >
         <template
           v-slot:icon
@@ -95,7 +95,7 @@ export default {
   },
   methods: {
     mudancaDeEtapa(etapa) {
-      if (this.etapaAtual < Object.keys(this.etapas).length+1 && etapa.visitada){
+      if (this.etapaAtual < Object.keys(this.etapas).length + 1 && etapa.visitada) {
         this.$emit('mudancaDeEtapa', etapa.numero);
       }
     },
@@ -103,8 +103,8 @@ export default {
       if (etapa.numero === this.etapaAtual) {
         return 'primary';
       }
-      if (etapa.visitada){
-        if (etapa.respondida){
+      if (etapa.visitada) {
+        if (etapa.respondida) {
           return 'success';
         }
         return 'warning';

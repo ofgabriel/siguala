@@ -1,5 +1,8 @@
 <template>
-  <v-container id="conteudo" class="pt-5">
+  <v-container
+    id="conteudo"
+    class="pt-5"
+  >
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
@@ -24,7 +27,7 @@
         />
       </v-col>
       <v-col
-        v-if="this.etapaAtual<Object.keys(this.etapas).length+1"
+        v-if="etapaAtual<Object.keys(etapas).length+1"
         cols="12"
         md="6"
         class="formulario"
@@ -44,7 +47,8 @@
       >
         <exibir-resultado
           :padrao="1"
-          :pontuacao="100" />
+          :pontuacao="100"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -71,21 +75,21 @@ export default {
       resultado: null,
     };
   },
+  beforeMount() {
+    this.adicionaFlags();
+  },
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
       document.documentElement.scrollTop = 0;
     },
     adicionaFlags() {
-      this.etapas.forEach(etapa =>{
-        etapa.respondida = false;
-        etapa.visitada = etapa.numero===1? true:false;
-      })
-    }
+      this.etapas.forEach((etapa) => {
+        this.etapas[etapa.numero].respondida = false;
+        this.etapas[etapa.numero].visitada = etapa.numero === 0;
+      });
+    },
   },
-  beforeMount(){
-    this.adicionaFlags()
- },
 };
 </script>
 <style>

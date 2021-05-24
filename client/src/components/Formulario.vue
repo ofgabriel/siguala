@@ -66,7 +66,7 @@ export default {
   },
   computed: {
     ultimaEtapa() {
-      return Object.keys(this.etapas).length+1
+      return Object.keys(this.etapas).length + 1;
     },
     proximaEtapa() {
       if (this.etapas.find((etapa) => etapa.numero === this.etapaAtual + 1)) {
@@ -75,7 +75,7 @@ export default {
 
       return null;
     },
-     etapaAnterior() {
+    etapaAnterior() {
       if ((this.etapaAtual - 1) in this.etapas) {
         return this.etapaAtual - 1;
       }
@@ -115,13 +115,13 @@ export default {
       this.$emit('mudancaDeEtapa', this.etapaAnterior);
     },
     mudancaDeEtapa() {
-      this.etapas[this.etapaAtual-1].respondida = true;
+      this.etapas[this.etapaAtual - 1].respondida = true;
       this.etapas[this.etapaAtual].visitada = true;
-      this.etapas[this.etapaAtual-1].visitada = true;
+      this.etapas[this.etapaAtual - 1].visitada = true;
       this.$emit('mudancaDeEtapa', this.proximaEtapa);
     },
     submeter() {
-      this.etapas[this.etapaAtual-1].respondida = true;
+      this.etapas[this.etapaAtual - 1].respondida = true;
       const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
       this.$emit('simular', resultado);
     },

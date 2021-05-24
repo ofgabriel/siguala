@@ -4,7 +4,10 @@
       <p class="msg-resultado">
         <strong>{{ labeltxt[padrao] }}</strong>
       </p>
-      <img class="selo-resultado" :src="labelsrc[padrao]" />
+      <img
+        class="selo-resultado"
+        :src="labelsrc[padrao]"
+      >
       <p class="msg-resultado">
         Total de pontos: {{ pontuacao }}
       </p>
