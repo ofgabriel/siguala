@@ -1,9 +1,14 @@
 <template>
-  <v-container id="conteudo">
-    <h2 class="text-center">
-      Simulação
-    </h2>
+  <v-container id="conteudo" class="pt-5">
+    <v-row v-if="resultado">
+      <exibir-resultado
+        :pontuacao="resultado.pontos"
+        :padrao="resultado.selo"
+      />
+    </v-row>
+
     <v-row
+      v-else
       class="mt-4"
       justify="center"
     >

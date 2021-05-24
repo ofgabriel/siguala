@@ -122,8 +122,8 @@ export default {
     },
     submeter() {
       this.etapas[this.etapaAtual-1].respondida = true;
-      alert('Formulário submetido!');
-      this.$emit('mudancaDeEtapa', Object.keys(this.etapas).length+1 );
+      const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
+      this.$emit('simular', resultado);
     },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this
