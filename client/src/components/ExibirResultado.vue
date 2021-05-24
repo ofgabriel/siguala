@@ -5,8 +5,7 @@
         <strong>{{ labeltxt[padrao] }}</strong>
       </p>
       <img
-        classs="selo-resultado"
-        height="220"
+        class="selo-resultado"
         :src="labelsrc[padrao]"
       >
       <p class="msg-resultado">
@@ -54,6 +53,9 @@ export default {
   },
 };
 </script>
-
 <style >
+img.selo-resultado {
+  max-width: 100%;
+  height:220px;
+}
 </style>

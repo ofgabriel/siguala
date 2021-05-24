@@ -11,6 +11,7 @@ export default {
             {
               pergunta: 'Você confirma ter lido e concordado com todos os termos do contrato de compromisso de adesão?',
               requisitoSeloOuro: false,
+
             },
           ],
         },

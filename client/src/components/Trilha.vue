@@ -14,7 +14,8 @@
           :key="`btn-${i}`"
           x-small
           fab
-          :color="getStepBackgroudColor(etapa.numero)"
+          :color="getStepBackgroudColor(etapa)"
+          @click.native="mudancaDeEtapa(etapa)"
         >
           <v-icon
             v-if="etapa.numero < etapaAtual"
@@ -24,7 +25,7 @@
           </v-icon>
           <span
             v-else
-            :class="getStepTextColor(etapa.numero)"
+            :class="getStepTextColor(etapa)"
           >{{ etapa.numero }}</span>
         </v-btn>
         <v-divider
@@ -42,22 +43,23 @@
         v-for="(etapa, i) in etapas"
         :key="i"
         class="my-4"
-        :color="getStepBackgroudColor(etapa.numero)"
+        :color="getStepBackgroudColor(etapa)"
         :large="etapa.numero == etapaAtual"
         fill-dot
+        @click.native="mudancaDeEtapa(etapa)"
       >
         <template
           v-slot:icon
         >
           <v-icon
-            v-if="etapa.numero < etapaAtual"
+            v-if="etapa.respondida && etapa.numero!=etapaAtual"
             color="white"
           >
             mdi-check
           </v-icon>
           <span
             v-else
-            :class="getStepTextColor(etapa.numero)"
+            :class="getStepTextColor(etapa)"
           >{{ etapa.numero }}</span>
         </template>
         <v-row>
@@ -92,17 +94,28 @@ export default {
     };
   },
   methods: {
-    getStepBackgroudColor(stepNumber) {
-      if (stepNumber === this.etapaAtual) {
+    mudancaDeEtapa(etapa) {
+      if (this.etapaAtual < Object.keys(this.etapas).length + 1 && etapa.visitada) {
+        this.$emit('mudancaDeEtapa', etapa.numero);
+      }
+    },
+    getStepBackgroudColor(etapa) {
+      if (etapa.numero === this.etapaAtual) {
         return 'primary';
       }
-      if (stepNumber < this.etapaAtual) {
-        return 'success';
+      if (etapa.visitada) {
+        if (etapa.respondida) {
+          return 'success';
+        }
+        return 'warning';
       }
       return 'white';
     },
-    getStepTextColor(stepNumber) {
-      if (stepNumber === this.etapaAtual) {
+    getStepTextColor(etapa) {
+      if (etapa.numero === this.etapaAtual) {
+        return 'white--text';
+      }
+      if (etapa.visitada) {
         return 'white--text';
       }
       return 'primary--text';
@@ -112,4 +125,10 @@ export default {
 </script>
 
 <style>
+.success {
+  cursor: pointer;
+}
+.warning {
+  cursor: pointer;
+}
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <v-container class="pt-5">
+  <v-container
+    id="conteudo"
+    class="pt-5"
+  >
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
@@ -12,6 +15,7 @@
       justify="center"
     >
       <v-col
+        id="trilha"
         cols="12"
         md="3"
         align="end"
@@ -19,17 +23,31 @@
         <trilha
           :etapas="etapas"
           :etapa-atual="etapaAtual"
+          @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
       <v-col
+        v-if="etapaAtual<Object.keys(etapas).length+1"
         cols="12"
         md="6"
+        class="formulario"
       >
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
           @simular="resultado = $event"
           @mudancaDeEtapa="atualizaEtapa"
+        />
+      </v-col>
+      <v-col
+        v-else
+        cols="6"
+        lg="6"
+        class="formulario"
+      >
+        <exibir-resultado
+          :padrao="1"
+          :pontuacao="100"
         />
       </v-col>
     </v-row>
@@ -57,10 +75,46 @@ export default {
       resultado: null,
     };
   },
+  beforeMount() {
+    this.adicionaFlags();
+  },
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
+      document.documentElement.scrollTop = 0;
+    },
+    adicionaFlags() {
+      this.etapas.forEach((etapa) => {
+        this.etapas[etapa.numero].respondida = false;
+        this.etapas[etapa.numero].visitada = etapa.numero === 0;
+      });
     },
   },
 };
 </script>
+<style>
+@media only screen and (min-width: 960px) {
+  .formulario {
+    margin-left:30%;
+    display: block;
+  }
+  #trilha {
+    left:16%;
+    position:fixed;
+  }
+}
+@media only screen and (max-width: 959px) {
+  .formulario {
+    display: block;
+  }
+  #trilha {
+    position:sticky;
+    top:50px;
+    z-index: 1;
+    background-color: white;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+}
+
+</style>
