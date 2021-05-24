@@ -42,8 +42,8 @@
 </template>
 
 <script>
-
 import Pergunta from './Pergunta.vue';
+import calcularSimulacao from '../services/calcular-simulacao';
 
 export default {
   name: 'Formulario',
@@ -69,7 +69,7 @@ export default {
       return Object.keys(this.etapas).length+1
     },
     proximaEtapa() {
-      if ((this.etapaAtual + 1) in this.etapas) {
+      if (this.etapas.find((etapa) => etapa.numero === this.etapaAtual + 1)) {
         return this.etapaAtual + 1;
       }
 

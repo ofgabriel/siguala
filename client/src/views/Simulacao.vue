@@ -6,7 +6,6 @@
         :padrao="resultado.selo"
       />
     </v-row>
-
     <v-row
       v-else
       class="mt-4"
@@ -33,6 +32,7 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
+          @simular="resultado = $event"
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
@@ -54,6 +54,7 @@
 
 import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
+import ExibirResultado from '../components/ExibirResultado.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
 import ExibirResultado from '../components/ExibirResultado.vue';
 
@@ -68,6 +69,7 @@ export default {
     return {
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
+      resultado: null,
     };
   },
   methods: {
