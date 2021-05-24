@@ -56,7 +56,6 @@ import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
 import ExibirResultado from '../components/ExibirResultado.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
-import ExibirResultado from '../components/ExibirResultado.vue';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
