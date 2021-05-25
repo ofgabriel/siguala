@@ -29,6 +29,7 @@
       {{ botaoVolta.texto }}
     </v-btn>
     <v-btn
+      :disabled="disabled"
       :color="botao.cor"
       class="float-right"
       @click="botao.acao"
@@ -62,6 +63,7 @@ export default {
   },
   data() {
     return {
+      disabled: true,
     };
   },
   computed: {
@@ -115,9 +117,9 @@ export default {
       this.$emit('mudancaDeEtapa', this.etapaAnterior);
     },
     mudancaDeEtapa() {
-      this.etapas[this.etapaAtual - 1].respondida = true;
       this.etapas[this.etapaAtual].visitada = true;
       this.etapas[this.etapaAtual - 1].visitada = true;
+      this.disabled = true;
       this.$emit('mudancaDeEtapa', this.proximaEtapa);
     },
     submeter() {
@@ -125,9 +127,22 @@ export default {
       const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
       this.$emit('simular', resultado);
     },
+    etapaRespondida() {
+      let respondida = true;
+      this.conteudoEtapaAtual.topicos.forEach((topico) => {
+        topico.itens.forEach((item) => {
+          if (typeof item.resposta === 'undefined') {
+            respondida = false;
+          }
+        });
+      });
+      this.disabled = !respondida;
+      this.etapas[this.etapaAtual - 1].respondida = true;
+    },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this
         .etapas[this.etapaAtual - 1].topicos[topicosIndex].itens[itemIndex].resposta = $event;
+      this.etapaRespondida();
     },
   },
 };
