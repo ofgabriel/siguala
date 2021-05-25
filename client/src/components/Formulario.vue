@@ -112,6 +112,9 @@ export default {
       return this.etapas.find((etapa) => etapa.numero === this.etapaAtual);
     },
   },
+  updated() {
+    this.etapaRespondida();
+  },
   methods: {
     voltarEtapa() {
       this.$emit('mudancaDeEtapa', this.etapaAnterior);
