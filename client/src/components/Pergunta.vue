@@ -8,10 +8,12 @@
     <v-radio
       value="sim"
       label="Sim"
+      :off-icon="respostaprevia === 'sim' ? '$radioOn' : '$radioOff'"
     />
     <v-radio
       value="nao"
       label="Não"
+      :off-icon="respostaprevia === 'nao' ? '$radioOn' : '$radioOff'"
     />
   </v-radio-group>
 </template>
@@ -24,6 +26,11 @@ export default {
     pergunta: {
       type: String,
       required: true,
+    },
+    respostaprevia: {
+      type: String,
+      required: false,
+      default: '',
     },
   },
   data() {

@@ -14,6 +14,7 @@
         :key="`pergunta-${itemIndex}-topico-${topicosIndex}-etapa-${etapaAtual}`"
         class="ml-8"
         :pergunta="item.pergunta"
+        :respostaprevia="item.resposta"
         @resposta="atualizaResposta($event, topicosIndex, itemIndex)"
       />
     </div>
