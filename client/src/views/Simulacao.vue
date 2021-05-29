@@ -63,6 +63,7 @@ import dadosSimulacao from '../assets/dadosSimulacao';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
+  name: 'Simulacao',
   components: {
     Trilha,
     Formulario,
