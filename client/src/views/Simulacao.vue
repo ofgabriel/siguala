@@ -84,10 +84,20 @@ export default {
       document.documentElement.scrollTop = 0;
     },
     adicionaFlags() {
-      this.etapas.forEach((etapa) => {
-        this.etapas[etapa.numero - 1].respondida = false;
-        this.etapas[etapa.numero - 1].visitada = etapa.numero === 1;
-      });
+      this.etapas = this.etapas.map((etapa) => ({
+        ...etapa,
+        respondida: false,
+        visitada: etapa.numero === 1,
+        topicos: etapa.topicos.map((topico) => ({
+          ...topico,
+          itens: topico.itens.map(
+            (item) => ({
+              ...item,
+              resposta: null,
+            }),
+          ),
+        })),
+      }));
     },
   },
 };

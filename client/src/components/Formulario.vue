@@ -30,6 +30,7 @@
       {{ botaoVolta.texto }}
     </v-btn>
     <v-btn
+      :disabled="!etapaAtualFoiRespondida"
       :color="botao.cor"
       class="float-right"
       @click="botao.acao"
@@ -60,10 +61,6 @@ export default {
       type: Number,
       required: true,
     },
-  },
-  data() {
-    return {
-    };
   },
   computed: {
     ultimaEtapa() {
@@ -110,13 +107,21 @@ export default {
     conteudoEtapaAtual() {
       return this.etapas.find((etapa) => etapa.numero === this.etapaAtual);
     },
+    etapaAtualFoiRespondida() {
+      return this.conteudoEtapaAtual.topicos.reduce(
+        (carry1, topico) => carry1 && topico.itens.reduce(
+          (carry2, item) => (carry2 && item.resposta),
+          true,
+        ),
+        true,
+      );
+    },
   },
   methods: {
     voltarEtapa() {
       this.$emit('mudancaDeEtapa', this.etapaAnterior);
     },
     mudancaDeEtapa() {
-      this.etapas[this.etapaAtual - 1].respondida = true;
       this.etapas[this.etapaAtual].visitada = true;
       this.etapas[this.etapaAtual - 1].visitada = true;
       this.$emit('mudancaDeEtapa', this.proximaEtapa);
@@ -129,6 +134,8 @@ export default {
     atualizaResposta($event, topicosIndex, itemIndex) {
       this
         .etapas[this.etapaAtual - 1].topicos[topicosIndex].itens[itemIndex].resposta = $event;
+      this
+        .etapas[this.etapaAtual - 1].respondida = this.etapaAtualFoiRespondida;
     },
   },
 };
