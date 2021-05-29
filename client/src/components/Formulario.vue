@@ -129,7 +129,7 @@ export default {
     submeter() {
       this.etapas[this.etapaAtual - 1].respondida = true;
       const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
-      this.$emit('simular', resultado);
+      this.$emit('formularioSubmetido', resultado);
     },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this

@@ -35,7 +35,7 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
-          @simular="resultado = $event"
+          @formularioSubmetido="resultado = $event"
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
