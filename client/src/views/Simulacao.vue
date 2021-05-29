@@ -85,8 +85,8 @@ export default {
     },
     adicionaFlags() {
       this.etapas.forEach((etapa) => {
-        this.etapas[etapa.numero].respondida = false;
-        this.etapas[etapa.numero].visitada = etapa.numero === 0;
+        this.etapas[etapa.numero - 1].respondida = false;
+        this.etapas[etapa.numero - 1].visitada = etapa.numero === 1;
       });
     },
   },
