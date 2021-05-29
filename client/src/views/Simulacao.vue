@@ -71,10 +71,23 @@ export default {
   },
   data() {
     return {
+      empresa: {
+        nome: null,
+        cnpj: null,
+        email: null,
+      },
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
       resultado: null,
     };
+  },
+  computed: {
+    empresaCadastrada() {
+      if (this.empresa.nome && this.empresa.cnpj && this.empresa.email) {
+        return true;
+      }
+      return false;
+    },
   },
   beforeMount() {
     this.adicionaFlags();
