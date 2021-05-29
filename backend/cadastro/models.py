@@ -8,4 +8,6 @@ class Empresa(models.Model):
     email = models.EmailField(verbose_name='E-mail')
 
     def __str__(self):
-      return self.name
+      return self.nome
+
+
