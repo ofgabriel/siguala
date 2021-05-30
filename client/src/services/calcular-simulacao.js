@@ -33,6 +33,14 @@ export default function (
     selo = 1;
   }
 
+  const numeroDePerguntas = etapas.reduce(
+    (totalEtapa, etapa) => totalEtapa
+      + etapa.topicos.reduce((totalTopico, topico) => totalTopico + topico.itens.length, 0),
+    0,
+  );
+
+  pontos = Math.round((pontos * 100) / numeroDePerguntas);
+
   return {
     pontos,
     selo,

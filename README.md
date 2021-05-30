@@ -46,6 +46,7 @@
 
     ```bash
     $ docker-compose up
+    $ docker-compose up -d #detached mode
     ```
 
     A versão de desenvolvimento do **Selo Diversidade** está disponível localmente em http://localhost:8080

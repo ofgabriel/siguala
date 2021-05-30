@@ -19,7 +19,7 @@
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
-        :padrao="resultado.selo"
+        :selo-calculado="resultado.selo"
       />
     </v-row>
     <v-row
@@ -48,7 +48,7 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
-          @formularioSubmetido="resultado = $event"
+          @resultadoCalculado="exibeResultado"
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
@@ -115,6 +115,10 @@ export default {
     },
     setEmpresa(empresa) {
       this.empresa = empresa;
+    },
+    exibeResultado(resultado) {
+      this.resultado = resultado;
+      window.scrollTo(0, 0);
     },
   },
 };
