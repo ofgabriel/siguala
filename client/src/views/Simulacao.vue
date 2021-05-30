@@ -6,7 +6,7 @@
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
-        :padrao="resultado.selo"
+        :selo-calculado="resultado.selo"
       />
     </v-row>
     <v-row
@@ -35,7 +35,7 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
-          @simular="resultado = $event"
+          @resultadoCalculado="exibeResultado"
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
@@ -98,6 +98,10 @@ export default {
           ),
         })),
       }));
+    },
+    exibeResultado(resultado) {
+      this.resultado = resultado;
+      window.scrollTo(0, 0);
     },
   },
 };
