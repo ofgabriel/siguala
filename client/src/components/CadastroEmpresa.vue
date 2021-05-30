@@ -48,6 +48,7 @@
 </template>
 <script>
 import { cnpj as cnpjValidador } from 'cpf-cnpj-validator';
+import API from '../api';
 
 export default {
   name: 'CadastroEmpresa',
@@ -104,8 +105,21 @@ export default {
       if (!this.valido) {
         return;
       }
-      // chamar api e cadastrar empresa aqui?
-      this.$emit('empresaCadastrada', this.empresa);
+      this.empresa.cnpj = this.empresa.cnpj.replace(/[^\d]+/g, '');
+
+      const body = this.empresa;
+      const url = '/cadastro/empresas/';
+
+      API.post(url, body)
+        .then((res) => {
+          console.log(res);
+          this.empresa.id = res.data.id;
+          this.$emit('empresaCadastrada', this.empresa);
+        })
+        .catch((error) => {
+          console.log(error);
+          // EMITIR ALERTA E RECARREGAR
+        });
     },
     validaCNPJ(cnpj) {
       if (!cnpj) {
