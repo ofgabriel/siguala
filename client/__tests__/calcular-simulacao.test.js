@@ -1,4 +1,4 @@
-import calcularSimulacao from '../../../src/services/calcular-simulacao';
+import calcularSimulacao from '../src/services/calcular-simulacao';
 
 describe('Calcular Resultado', () => {
   it('calcula resultado para selo bronze', () => {
