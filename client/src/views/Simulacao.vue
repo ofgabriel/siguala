@@ -3,6 +3,19 @@
     id="conteudo"
     class="pt-5"
   >
+    <v-row justify="center">
+      <v-col
+        cols="12"
+        sm="8"
+        md="6"
+        lg="5"
+      >
+        <cadastro-empresa
+          v-if="!empresaCadastrada"
+          @empresaCadastrada="setEmpresa"
+        />
+      </v-col>
+    </v-row>
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
@@ -10,7 +23,7 @@
       />
     </v-row>
     <v-row
-      v-else
+      v-if="empresaCadastrada"
       class="mt-4"
       justify="center"
     >
@@ -39,17 +52,6 @@
           @mudancaDeEtapa="atualizaEtapa"
         />
       </v-col>
-      <v-col
-        v-else
-        cols="6"
-        lg="6"
-        class="formulario"
-      >
-        <exibir-resultado
-          :padrao="1"
-          :pontuacao="100"
-        />
-      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -59,6 +61,7 @@
 import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
 import ExibirResultado from '../components/ExibirResultado.vue';
+import CadastroEmpresa from '../components/CadastroEmpresa.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
 
 export default {
@@ -68,14 +71,11 @@ export default {
     Trilha,
     Formulario,
     ExibirResultado,
+    CadastroEmpresa,
   },
   data() {
     return {
-      empresa: {
-        nome: null,
-        cnpj: null,
-        email: null,
-      },
+      empresa: null,
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
       resultado: null,
@@ -83,7 +83,7 @@ export default {
   },
   computed: {
     empresaCadastrada() {
-      if (this.empresa.nome && this.empresa.cnpj && this.empresa.email) {
+      if (this.empresa && this.empresa.nome && this.empresa.cnpj && this.empresa.email) {
         return true;
       }
       return false;
@@ -112,6 +112,9 @@ export default {
           ),
         })),
       }));
+    },
+    setEmpresa(empresa) {
+      this.empresa = empresa;
     },
   },
 };
