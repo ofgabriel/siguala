@@ -50,4 +50,5 @@
 
     A versão de desenvolvimento do **Selo Diversidade** está disponível localmente em http://localhost:8080
 
+
     E acabou! :tada: Bom desenvolvimento :smiley:
