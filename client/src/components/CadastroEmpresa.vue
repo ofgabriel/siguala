@@ -19,6 +19,7 @@
         v-model="empresa.cnpj"
         :rules="campos.cnpj.regras"
         :label="campos.cnpj.label"
+        type="tel"
         required
       />
 
