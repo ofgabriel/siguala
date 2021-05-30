@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     cadastraEmpresa() {
-      this.$refs.form.validate();
+      this.valido = this.$refs.form.validate();
       if (!this.valido) {
         return;
       }
