@@ -44,6 +44,14 @@
         Continuar
       </v-btn>
     </v-form>
+    <v-alert
+      transition="scale-transition"
+      class="alerta"
+      v-if="erro"
+      type="error"
+    >
+      Erro ao salvar informações da empresa. Verifique os campos e tente novamente
+    </v-alert>
   </div>
 </template>
 <script>
@@ -89,6 +97,7 @@ export default {
         },
       },
       valido: true,
+      erro: false,
     };
   },
   computed: {
@@ -112,13 +121,12 @@ export default {
 
       API.post(url, body)
         .then((res) => {
-          console.log(res);
           this.empresa.id = res.data.id;
           this.$emit('empresaCadastrada', this.empresa);
         })
         .catch((error) => {
           console.log(error.message);
-          alert('Erro ao salvar informações da empresa. Verifique oc campos e tente novamente');
+          this.erro = true;
         });
     },
     validaCNPJ(cnpj) {
@@ -133,3 +141,8 @@ export default {
   },
 };
 </script>
+<style>
+.alerta {
+  margin-top: 50px;
+}
+</style>
