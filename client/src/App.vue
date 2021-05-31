@@ -5,17 +5,39 @@
       color="primary"
       dark
       elevate-on-scroll
+      height="80"
     >
-      <v-app-bar-nav-icon @click="drawer = true" />
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.width <= 700"
+        @click="drawer = true"
+      />
       <router-link :to="{ name: 'Home' }">
-        <v-toolbar-title class="white--text pr-10">
-          Selo diversidade
+        <v-toolbar-title class="white--text pr-10 menu">
+          <span class="logo" /> Selo de Igualdade de Gênero
         </v-toolbar-title>
       </router-link>
+      <v-tabs
+        v-if="$vuetify.breakpoint.width > 700"
+        right
+      >
+        <v-tab
+          :to="{ name: 'Home' }"
+          class="menu"
+        >
+          Home
+        </v-tab>
+        <v-tab
+          :to="{ name: 'Simulacao' }"
+          class="menu"
+        >
+          Simular Selo
+        </v-tab>
+      </v-tabs>
     </v-app-bar>
     <v-navigation-drawer
+      v-if="$vuetify.breakpoint.width <= 700"
       v-model="drawer"
-      absolute
+      fixed
       temporary
     >
       <v-list
@@ -24,41 +46,39 @@
       >
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
         >
           <v-list-item :to="{ name: 'Home' }">
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title class="menu">
+              Home
+            </v-list-item-title>
           </v-list-item>
-
-          <v-list-item :to="{ name: 'Sobre' }">
-            <v-list-item-icon>
-              <v-icon>mdi-information</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Sobre</v-list-item-title>
-          </v-list-item>
-
           <v-list-item :to="{ name: 'Simulacao' }">
-            <v-list-item-icon>
-              <v-icon>mdi-information</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Simulação</v-list-item-title>
+            <v-list-item-title class="menu">
+              Simulação
+            </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-
-    <v-main>
+    <v-main fill-height>
       <router-view />
     </v-main>
+    <footer
+      id="footer"
+    >
+      <p class="mx-auto conteudo text-left footer-txt">
+        Este projeto é uma iniciativa de professoras e alunos da Faculdade de Direito da UFRJ,
+        membros da Liga de Direito e Tecnologia, e desenvolvido em parceria com alunos da
+        COPPE/UFRJ (Instituto Alberto Luiz Coimbra de Pós-Graduação e Pesquisa de Engenharia).
+      </p>
+    </footer>
   </v-app>
 </template>
 
 <script>
 
 export default {
+  components: {},
   name: 'App',
 
   data: () => ({
@@ -67,3 +87,39 @@ export default {
   }),
 };
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+/* Não tá funcionando */
+@media (max-width: 600px) {
+  #footer {
+    height: 600px;
+    bottom: -580px;
+  }
+}
+.logo {
+  height: 36px;
+  width: 36px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  margin-left: 20px;
+}
+.menu {
+  font-family: Montserrat;
+}
+#footer {
+  display: inline-block;
+  height: 300px;
+  bottom: -280px;
+  position: absolute;
+  background-color: #D8D8D8;
+}
+.footer-txt {
+  padding: 40px 10%;
+}
+.add-padding {
+  padding-bottom:300px;
+}
+</style>
