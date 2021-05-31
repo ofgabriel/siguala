@@ -16,7 +16,7 @@
         <v-card-actions>
           <v-btn
             text
-            color="deep-purple accent-4"
+            color="primary"
             :href="conteudo.link"
           >
             Saiba mais
