@@ -117,8 +117,8 @@ export default {
           this.$emit('empresaCadastrada', this.empresa);
         })
         .catch((error) => {
-          console.log(error);
-          // EMITIR ALERTA E RECARREGAR
+          console.log(error.message);
+          alert('Erro ao salvar informações da empresa. Verifique oc campos e tente novamente');
         });
     },
     validaCNPJ(cnpj) {
