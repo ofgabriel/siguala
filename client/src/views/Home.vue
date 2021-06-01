@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="ml-0 mr-0 pa-0 main" fluid>
     <informacoes-basicas />
   </v-container>
 </template>

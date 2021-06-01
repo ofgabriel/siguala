@@ -1,37 +1,35 @@
 <template>
-  <v-row class="text-center home-destaque">
-    <v-row class="d-flex justify-space-around mb-6 destaque-texto">
-      <v-col class="pa-2">
-        <h1 class="header-boas-vindas">
-          Ajudamos sua empresa a promover um ambiente mais igualitário
-        </h1>
-        <h3 class="paragrafo-boas-vindas">
-          Empresas que possibilitam um ambiente mais justo para os seus
-          funcionários possuem resultados financeiros mais expressivos.
-        </h3>
-        <v-row>
-          <v-btn
-            class="botao-home"
-            color="primary"
-            :to="{ name: 'Simulacao' }"
-          >
-            Simule seu selo
-          </v-btn>
-        </v-row>
-      </v-col>
-      <v-col
-        v-if="$vuetify.breakpoint.width > 700"
-        class="pa-2"
-      >
-        <img :src="imagem">
-      </v-col>
-    </v-row>
+  <v-row
+    justify="space-around"
+    align="center"
+    no-gutters
+    :class="{'home-mob':$vuetify.breakpoint.width <= 700,'home':$vuetify.breakpoint.width > 700}"
+  >
     <v-col
-      v-if="$vuetify.breakpoint.width <= 700"
       cols="12"
-      class="img-div"
+      md="7"
+      color="secondary"
     >
-      <img :src="imagem">
+      <h1 class="header-boas-vindas">
+        Ajudamos sua empresa a promover um ambiente mais igualitário
+      </h1>
+      <h3 class="paragrafo-boas-vindas">
+        Empresas que possibilitam um ambiente mais justo para os seus
+        funcionários possuem resultados financeiros mais expressivos.
+      </h3>
+      <v-btn
+        class="botao-home"
+        color="primary"
+        :to="{ name: 'Simulacao' }"
+      >
+        Simule seu selo
+      </v-btn>
+    </v-col>
+    <v-col
+      cols="12"
+      md="5"
+    >
+      <v-img :src="imagem" />
     </v-col>
   </v-row>
 </template>
@@ -46,6 +44,14 @@ export default {
       imagem: imagemHome,
     };
   },
+  computed: {
+    trocaClasse() {
+      if (window.innerWidth < 600) {
+        return 'home-mob';
+      }
+      return 'home';
+    },
+  },
 };
 </script>
 
@@ -54,10 +60,13 @@ export default {
     .header-boas-vindas {
       font-size: 1.4rem;
     }
+    .home {
+      padding: 0;
+    }
   }
 
   .header-boas-vindas {
-    margin-bottom: 2rem;
+    padding: 30px;
     text-align: left;
     color: white;
     font-weight: 700;
@@ -67,6 +76,7 @@ export default {
   }
   .paragrafo-boas-vindas {
     color: white;
+    padding: 30px;
     text-align: left;
     font-weight: 500;
     font-size: 19px;
@@ -75,35 +85,23 @@ export default {
   }
   .botao-home {
     left:0;
-    margin-top:50px;
-    margin-bottom:30px;
-    margin-left:16px;
+    margin-top:30px;
+    margin-bottom:50px;
+    margin-left:30px;
   }
-  .home-destaque {
-    position: absolute;
-    padding-top:20px;
-    left: 0;
-    right: 0;
+  .home {
     background-color: #7C7C7C;
+    width:100%;
+    padding: 24px;
+  }
+  .home-mob {
+    background-color: #7C7C7C;
+    width:100%;
   }
   .destaque-texto {
     padding-top: 30px;
     padding-left:10%;
     padding-right:10%;
-  }
-  img {
-    max-width: 400px;
-    width: 100%;
-    margin:auto;
-    margin-top:10px;
-  }
-  .img-div img {
-    max-width: 530px;
-  }
-  .img-div {
-    height: auto;
-    padding: 0;
-    background-color: white;
   }
 
 </style>

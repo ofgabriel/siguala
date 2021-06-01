@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="app">
     <v-app-bar
       app
       color="primary"
@@ -13,7 +13,10 @@
       />
       <router-link :to="{ name: 'Home' }">
         <v-toolbar-title class="white--text pr-10 menu">
-          <span class="logo" /> Selo de Igualdade de Gênero
+          <span
+            class="logo"
+            v-if="$vuetify.breakpoint.width > 700"
+          /> Selo de Igualdade de Gênero
         </v-toolbar-title>
       </router-link>
       <v-tabs
@@ -60,13 +63,13 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-    <v-main fill-height>
-      <router-view />
+    <v-main>
+      <router-view/>
     </v-main>
     <footer
       id="footer"
     >
-      <p class="mx-auto conteudo text-left footer-txt">
+      <p class="footer-txt">
         Este projeto é uma iniciativa de professoras e alunos da Faculdade de Direito da UFRJ,
         membros da Liga de Direito e Tecnologia, e desenvolvido em parceria com alunos da
         COPPE/UFRJ (Instituto Alberto Luiz Coimbra de Pós-Graduação e Pesquisa de Engenharia).
@@ -89,13 +92,12 @@ export default {
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-/* Não tá funcionando */
-@media (max-width: 600px) {
-  #footer {
-    height: 600px;
-    bottom: -580px;
-  }
-}
+/* body, #app, .container, .v-main__wrap, .main {
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+  flex:1;
+} */
 .logo {
   height: 36px;
   width: 36px;
@@ -107,19 +109,19 @@ export default {
   margin-left: 20px;
 }
 .menu {
+  height: 100%;
   font-family: Montserrat;
 }
 #footer {
-  display: inline-block;
-  height: 300px;
-  bottom: -280px;
-  position: absolute;
+  height:300px;
   background-color: #D8D8D8;
+  flex-shrink: 0;
 }
 .footer-txt {
   padding: 40px 10%;
 }
-.add-padding {
-  padding-bottom:300px;
+.main {
+  width:100% !important;
+  max-width:100% !important;
 }
 </style>
