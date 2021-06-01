@@ -113,7 +113,7 @@ export default {
   font-family: Montserrat;
 }
 #footer {
-  height:300px;
+  margin-top:20px;
   background-color: #D8D8D8;
   flex-shrink: 0;
 }

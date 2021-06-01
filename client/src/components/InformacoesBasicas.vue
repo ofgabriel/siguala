@@ -23,6 +23,7 @@
         class="botao-home"
         color="primary"
         :to="{ name: 'Simulacao' }"
+        min-width="200px"
       >
         Simule seu selo
       </v-btn>
@@ -31,7 +32,9 @@
       cols="12"
       md="5"
     >
-      <v-img :src="imagem" />
+      <v-img
+        :src="imagem"
+      />
     </v-col>
   </v-row>
 </template>
@@ -82,6 +85,7 @@ export default {
     margin-top:30px;
     margin-bottom:50px;
     margin-left:30px;
+    text-align: center;
   }
   .home {
     background-color: #7C7C7C;
