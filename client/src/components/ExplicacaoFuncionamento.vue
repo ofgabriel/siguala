@@ -110,14 +110,6 @@ export default {
       imagem: imagemHome,
     };
   },
-  computed: {
-    trocaClasse() {
-      if (window.innerWidth < 600) {
-        return 'home-mob';
-      }
-      return 'home';
-    },
-  },
 };
 </script>
 
