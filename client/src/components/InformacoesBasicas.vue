@@ -1,14 +1,16 @@
 <template>
   <v-row
-    justify="space-around"
     align="center"
+    justify="center"
     no-gutters
-    :class="{'home-mob':$vuetify.breakpoint.width <= 700,'home':$vuetify.breakpoint.width > 700}"
+    :class="{'home-mob':$vuetify.breakpoint.width <= 700,
+             'home':$vuetify.breakpoint.width > 700}"
   >
     <v-col
       cols="12"
       md="7"
       color="secondary"
+      class="destaque-texto"
     >
       <h1 class="header-boas-vindas">
         Ajudamos sua empresa a promover um ambiente mais igualitário
@@ -99,9 +101,7 @@ export default {
     width:100%;
   }
   .destaque-texto {
-    padding-top: 30px;
-    padding-left:10%;
-    padding-right:10%;
+    max-width: 700px;
   }
 
 </style>
