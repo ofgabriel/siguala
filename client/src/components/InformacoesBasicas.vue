@@ -90,10 +90,12 @@ export default {
   .home {
     background-color: #7C7C7C;
     width:100%;
+    text-align: left;
     padding: 24px;
   }
   .home-mob {
     background-color: #7C7C7C;
+    text-align: left;
     width:100%;
   }
   .destaque-texto {
