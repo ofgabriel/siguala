@@ -104,7 +104,7 @@
 import imagemHome from '../../public/imagem_home.png';
 
 export default {
-  name: 'InformacoesBasicas',
+  name: 'ExplicacaoEtapas',
   data() {
     return {
       imagem: imagemHome,
