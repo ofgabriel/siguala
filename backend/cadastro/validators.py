@@ -6,7 +6,9 @@ def digito_verificador(digitos, posicao):
   soma = 0
   for d, p in zip(digitos, pesos):
     soma += d*p
-  return soma % 11
+  digito = soma % 11
+  digito = 0 if digito == 10 else digito
+  return digito
 
 def validar_cnpj(cnpj):
   if len(cnpj) == 14:
@@ -19,5 +21,3 @@ def validar_cnpj(cnpj):
     _('%(cnpj)s não é um CNPJ válido'),
     params={'cnpj': cnpj},
   )
-
-

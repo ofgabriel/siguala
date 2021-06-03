@@ -2,11 +2,12 @@
   <v-row class="text-center">
     <v-col cols="12">
       <p class="msg-resultado">
-        <strong>{{ labeltxt[padrao] }}</strong>
+        <strong>{{ selos[seloCalculado].texto }}</strong>
       </p>
       <img
+        v-if="selos[seloCalculado].imagem"
         class="selo-resultado"
-        :src="labelsrc[padrao]"
+        :src="selos[seloCalculado].imagem"
       >
       <p class="msg-resultado">
         Total de pontos: {{ pontuacao }}
@@ -29,7 +30,7 @@ export default {
     ConteudoEducativo,
   },
   props: {
-    padrao: {
+    seloCalculado: {
       type: Number,
       required: true,
     },
@@ -40,18 +41,25 @@ export default {
   },
   data() {
     return {
-      labelsrc: [
-        imagemSeloOuro,
-        imagemSeloOuro,
-        imagemSeloPrata,
-        imagemSeloBronze,
-      ],
-      labeltxt: [
-        'Infelizmente você não pontuou o necessário para obtenção do selo',
-        'Parabéns! Você obteve o selo ouro!',
-        'Parabéns! Você obteve o selo prata!',
-        'Parabéns! Você obteve o selo bronze!',
-      ],
+      selos: {
+        0: {
+          texto: 'Infelizmente você não pontuou o necessário para obtenção do selo',
+          imagem: null,
+        },
+        1: {
+          imagem: imagemSeloOuro,
+          texto: 'Parabéns! Você obteve o selo ouro!',
+        },
+        2: {
+          imagem: imagemSeloPrata,
+          texto: 'Parabéns! Você obteve o selo prata!',
+        },
+        3: {
+          imagem: imagemSeloBronze,
+          texto: 'Parabéns! Você obteve o selo bronze!',
+        },
+
+      },
       conteudosEducativos: mockConteudos.conteudos,
     };
   },

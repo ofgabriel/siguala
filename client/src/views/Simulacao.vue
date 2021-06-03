@@ -3,14 +3,27 @@
     id="conteudo"
     class="pt-5"
   >
+    <v-row justify="center">
+      <v-col
+        cols="12"
+        sm="8"
+        md="6"
+        lg="5"
+      >
+        <cadastro-empresa
+          v-if="!empresaCadastrada"
+          @empresaCadastrada="setEmpresa"
+        />
+      </v-col>
+    </v-row>
     <v-row v-if="resultado">
       <exibir-resultado
         :pontuacao="resultado.pontos"
-        :padrao="resultado.selo"
+        :selo-calculado="resultado.selo"
       />
     </v-row>
     <v-row
-      v-else
+      v-if="empresaCadastrada"
       class="mt-4"
       justify="center"
     >
@@ -35,19 +48,8 @@
         <formulario
           :etapas="etapas"
           :etapa-atual="etapaAtual"
-          @simular="resultado = $event"
+          @resultadoCalculado="exibeResultado"
           @mudancaDeEtapa="atualizaEtapa"
-        />
-      </v-col>
-      <v-col
-        v-else
-        cols="6"
-        lg="6"
-        class="formulario"
-      >
-        <exibir-resultado
-          :padrao="1"
-          :pontuacao="100"
         />
       </v-col>
     </v-row>
@@ -59,21 +61,33 @@
 import Trilha from '../components/Trilha.vue';
 import Formulario from '../components/Formulario.vue';
 import ExibirResultado from '../components/ExibirResultado.vue';
+import CadastroEmpresa from '../components/CadastroEmpresa.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
+  name: 'Simulacao',
   components: {
     Trilha,
     Formulario,
     ExibirResultado,
+    CadastroEmpresa,
   },
   data() {
     return {
+      empresa: null,
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
       resultado: null,
     };
+  },
+  computed: {
+    empresaCadastrada() {
+      if (this.empresa && this.empresa.nome && this.empresa.cnpj && this.empresa.email) {
+        return true;
+      }
+      return false;
+    },
   },
   beforeMount() {
     this.adicionaFlags();
@@ -98,6 +112,13 @@ export default {
           ),
         })),
       }));
+    },
+    setEmpresa(empresa) {
+      this.empresa = empresa;
+    },
+    exibeResultado(resultado) {
+      this.resultado = resultado;
+      window.scrollTo(0, 0);
     },
   },
 };

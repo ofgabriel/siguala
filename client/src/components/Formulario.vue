@@ -81,7 +81,7 @@ export default {
     },
     botaoVolta() {
       return {
-        cor: 'success',
+        cor: 'primary',
         icone: 'arrow-up-thick',
         texto: 'Etapa anterior',
         acao: this.voltarEtapa,
@@ -90,7 +90,7 @@ export default {
     botao() {
       if (this.proximaEtapa) {
         return {
-          cor: 'success',
+          cor: 'primary',
           icone: 'arrow-down-thick',
           texto: 'Próxima etapa',
           acao: this.mudancaDeEtapa,
@@ -98,7 +98,7 @@ export default {
       }
 
       return {
-        cor: 'primary',
+        cor: 'secondary',
         icone: 'cloud-upload',
         texto: 'Submeter',
         acao: this.submeter,
@@ -128,8 +128,8 @@ export default {
     },
     submeter() {
       this.etapas[this.etapaAtual - 1].respondida = true;
-      const resultado = calcularSimulacao(this.etapas, 5, 7, 10);
-      this.$emit('simular', resultado);
+      const resultado = calcularSimulacao(this.etapas, 19, 28, 34);
+      this.$emit('resultadoCalculado', resultado);
     },
     atualizaResposta($event, topicosIndex, itemIndex) {
       this

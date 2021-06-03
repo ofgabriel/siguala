@@ -2,23 +2,6 @@ export default {
   etapas: [
     {
       numero: 1,
-      nome: 'Aceite da Verificação',
-      descricao: 'Alguma descrição dessa etapa',
-      topicos: [
-        {
-          nome: 'Contrato',
-          itens: [
-            {
-              pergunta: 'Você confirma ter lido e concordado com todos os termos do contrato de compromisso de adesão?',
-              requisitoSeloOuro: false,
-
-            },
-          ],
-        },
-      ],
-    },
-    {
-      numero: 2,
       nome: 'Equipe de Implementação',
       descricao: 'Alguma descrição dessa etapa',
       topicos: [
@@ -51,7 +34,7 @@ export default {
       ],
     },
     {
-      numero: 3,
+      numero: 2,
       nome: 'Análise da Empresa',
       descricao: 'Alguma descrição dessa etapa',
       topicos: [
@@ -88,7 +71,7 @@ export default {
       ],
     },
     {
-      numero: 4,
+      numero: 3,
       nome: 'Plano de Ação',
       descricao: 'Alguma descrição dessa etapa',
       topicos: [
@@ -116,7 +99,7 @@ export default {
       ],
     },
     {
-      numero: 5,
+      numero: 4,
       nome: 'Política de Igualdade de Gênero',
       descricao: 'Alguma descrição dessa etapa',
       topicos: [
