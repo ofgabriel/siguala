@@ -112,18 +112,19 @@
       cols="12"
       class="d-none d-md-block"
     >
-      <v-sparkline
-        z-index="1"
-        :v-if="mostraCurva"
-        auto-draw
-        auto-draw-easing="ease-in"
-        :value="curva"
-        line-width="0.5"
-        smooth="40"
-        height="80"
-        auto-draw-duration="10000"
-        class="abaixo ml-10 mr-10"
-      />
+      <v-lazy>
+        <v-sparkline
+          z-index="1"
+          :v-if="mostraCurva"
+          auto-draw
+          :value="curva"
+          line-width="0.5"
+          smooth="40"
+          height="80"
+          auto-draw-duration="4000"
+          class="abaixo ml-10 mr-10"
+        />
+      </v-lazy>
     </v-col>
     <v-row justify="space-around">
       <v-col
