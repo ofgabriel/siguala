@@ -2,4 +2,5 @@ test-job:
   stage: test
   script:
     - cd client
+    - npm install
     - npm run test:unit
