@@ -1,38 +1,54 @@
 <template>
-  <v-row class="text-center">
-    <v-col cols="12">
+  <v-row
+    align="center"
+    justify="center"
+    no-gutters
+    :class="{'home-mob':$vuetify.breakpoint.width <= 700,
+             'home':$vuetify.breakpoint.width > 700}"
+  >
+    <v-col
+      cols="12"
+      md="7"
+      color="secondary"
+      class="destaque-texto"
+    >
       <h1 class="header-boas-vindas">
-        Bem-vind@ ao Selo Diversidade!
+        Ajudamos sua empresa a promover um ambiente mais igualitário
       </h1>
-      <p class="paragrafo-boas-vindas">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan ligula nec felis
-        consequat, vel tincidunt nisl dapibus. Quisque id erat rhoncus, consequat sem efficitur,
-        tempus lacus. Ut et ligula ultrices ante volutpat congue non sit amet lorem. In molestie, ex
-        lacinia tempus commodo, nisi nisl accumsan dolor, at ullamcorper sem mi et ligula. Nunc
-        ornare ut felis et posuere. In ornare dignissim accumsan. Integer dapibus, turpis nec
-        accumsan placerat, erat libero porta felis, aliquam rutrum dui orci vel leo. Sed id posuere
-        arcu, vel hendrerit odio. Praesent dignissim viverra orci, non eleifend risus hendrerit eu.
-        Suspendisse sit amet risus.
-      </p>
+      <h3 class="paragrafo-boas-vindas">
+        Empresas que possibilitam um ambiente mais justo para os seus
+        funcionários possuem resultados financeiros mais expressivos.
+      </h3>
       <v-btn
-        color="success"
+        class="botao-home"
+        color="primary"
         :to="{ name: 'Simulacao' }"
+        min-width="200px"
       >
-        <v-icon left>
-          mdi-postage-stamp
-        </v-icon>
         Simule seu selo
       </v-btn>
+    </v-col>
+    <v-col
+      cols="12"
+      md="5"
+    >
+      <v-img
+        :src="imagem"
+      />
     </v-col>
   </v-row>
 </template>
 
 <script>
+import imagemHome from '../../public/imagem_home.png';
+
 export default {
   name: 'InformacoesBasicas',
-
-  data: () => ({
-  }),
+  data() {
+    return {
+      imagem: imagemHome,
+    };
+  },
 };
 </script>
 
@@ -41,13 +57,49 @@ export default {
     .header-boas-vindas {
       font-size: 1.4rem;
     }
+    .home {
+      padding: 0;
+    }
   }
 
   .header-boas-vindas {
-    margin-bottom: 2rem;
+    padding: 30px;
+    text-align: left;
+    color: white;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 56px;
+    letter-spacing: 2px;
   }
   .paragrafo-boas-vindas {
-    text-align: justify;
-    text-indent: 2rem;
+    color: white;
+    padding: 30px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 40px;
+    letter-spacing: 2px;
   }
+  .botao-home {
+    left:0;
+    margin-top:30px;
+    margin-bottom:50px;
+    margin-left:30px;
+    text-align: center;
+  }
+  .home {
+    background-color: #7C7C7C;
+    width:100%;
+    text-align: left;
+    padding: 24px;
+  }
+  .home-mob {
+    background-color: #7C7C7C;
+    text-align: left;
+    width:100%;
+  }
+  .destaque-texto {
+    max-width: 700px;
+  }
+
 </style>

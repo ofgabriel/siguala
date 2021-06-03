@@ -81,7 +81,7 @@ export default {
     },
     botaoVolta() {
       return {
-        cor: 'success',
+        cor: 'primary',
         icone: 'arrow-up-thick',
         texto: 'Etapa anterior',
         acao: this.voltarEtapa,
@@ -90,7 +90,7 @@ export default {
     botao() {
       if (this.proximaEtapa) {
         return {
-          cor: 'success',
+          cor: 'primary',
           icone: 'arrow-down-thick',
           texto: 'Próxima etapa',
           acao: this.mudancaDeEtapa,
@@ -98,7 +98,7 @@ export default {
       }
 
       return {
-        cor: 'primary',
+        cor: 'secondary',
         icone: 'cloud-upload',
         texto: 'Submeter',
         acao: this.submeter,

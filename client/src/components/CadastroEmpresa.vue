@@ -105,7 +105,7 @@ export default {
       if (!this.valido) {
         return 'error';
       }
-      return 'success';
+      return 'primary';
     },
   },
   methods: {
