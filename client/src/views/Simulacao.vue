@@ -23,7 +23,7 @@
       />
     </v-row>
     <v-row
-      v-if="empresaCadastrada"
+      v-if="empresaCadastrada && !resultado"
       class="mt-4"
       justify="center"
     >
