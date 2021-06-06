@@ -1,4 +1,4 @@
-import calcularSimulacao from '../../../src/services/calcular-simulacao';
+import calcularSimulacao from '../src/services/calcular-simulacao';
 
 describe('Calcular Resultado', () => {
   it('calcula resultado para selo bronze', () => {
@@ -12,12 +12,12 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.1.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
               {
                 pergunta: 'Pergunta 1.1.b',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -27,7 +27,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.2.a',
                 requisitoSeloOuro: false,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -42,7 +42,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 2.1.a',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -53,7 +53,7 @@ describe('Calcular Resultado', () => {
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
     expect(resultado.selo).toBe(3); // bronze
-    expect(resultado.pontos).toBe(1);
+    expect(resultado.pontos).toBe(25);
   });
 
   it('calcula resultado para selo prata', () => {
@@ -67,12 +67,12 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.1.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
               {
                 pergunta: 'Pergunta 1.1.b',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -82,7 +82,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.2.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
             ],
           },
@@ -97,7 +97,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 2.1.a',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -108,7 +108,7 @@ describe('Calcular Resultado', () => {
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
     expect(resultado.selo).toBe(2); // prata
-    expect(resultado.pontos).toBe(2);
+    expect(resultado.pontos).toBe(50);
   });
 
   it('calcula resultado para selo prata por reponder NAO em alguma de selo ouro', () => {
@@ -122,12 +122,12 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.1.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
               {
                 pergunta: 'Pergunta 1.1.b',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -137,7 +137,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.2.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
             ],
           },
@@ -152,7 +152,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 2.1.a',
                 requisitoSeloOuro: true,
-                resposta: true,
+                resposta: 'sim',
               },
             ],
           },
@@ -163,7 +163,7 @@ describe('Calcular Resultado', () => {
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
     expect(resultado.selo).toBe(2); // prata
-    expect(resultado.pontos).toBe(3);
+    expect(resultado.pontos).toBe(75);
   });
 
   it('calcula resultado para selo ouro', () => {
@@ -177,12 +177,12 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.1.a',
                 requisitoSeloOuro: false,
-                resposta: true,
+                resposta: 'sim',
               },
               {
                 pergunta: 'Pergunta 1.1.b',
                 requisitoSeloOuro: true,
-                resposta: true,
+                resposta: 'sim',
               },
             ],
           },
@@ -192,7 +192,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.2.a',
                 requisitoSeloOuro: false,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -207,7 +207,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 2.1.a',
                 requisitoSeloOuro: true,
-                resposta: true,
+                resposta: 'sim',
               },
             ],
           },
@@ -218,7 +218,7 @@ describe('Calcular Resultado', () => {
     const resultado = calcularSimulacao(etapas, 1, 2, 3);
 
     expect(resultado.selo).toBe(1); // ouro
-    expect(resultado.pontos).toBe(3);
+    expect(resultado.pontos).toBe(75);
   });
 
   it('calcula resultado para nenhum selo', () => {
@@ -232,12 +232,12 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.1.a',
                 requisitoSeloOuro: false,
-                resposta: false,
+                resposta: 'nao',
               },
               {
                 pergunta: 'Pergunta 1.1.b',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -247,7 +247,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 1.2.a',
                 requisitoSeloOuro: false,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
@@ -262,7 +262,7 @@ describe('Calcular Resultado', () => {
               {
                 pergunta: 'Pergunta 2.1.a',
                 requisitoSeloOuro: true,
-                resposta: false,
+                resposta: 'nao',
               },
             ],
           },
