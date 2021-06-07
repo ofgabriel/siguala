@@ -69,19 +69,41 @@
     <footer
       id="footer"
     >
-      <v-row justify="center" align="center">
-        <v-col cols="12" md="4">
+      <v-row
+        justify="center"
+        align="center"
+      >
+        <v-col
+          cols="12"
+          md="4"
+        >
           <p class="footer-txt">
             Este projeto é uma iniciativa de professoras e alunos da Faculdade de Direito da UFRJ,
             membros da Liga de Direito e Tecnologia, e desenvolvido em parceria com alunos da
             COPPE/UFRJ (Instituto Alberto Luiz Coimbra de Pós-Graduação e Pesquisa de Engenharia).
           </p>
         </v-col>
-        <v-col cols="12" md="2">
-          <v-img :src="logo_fnd" class="img-footer" max-width="160px" contain />
+        <v-col
+          cols="12"
+          md="2"
+        >
+          <v-img
+            :src="logo_fnd"
+            class="img-footer"
+            max-width="160px"
+            contain
+          />
         </v-col>
-        <v-col cols="12" md="2">
-          <v-img :src="logo_coppe" class="img-footer" max-width="150px" contain />
+        <v-col
+          cols="12"
+          md="2"
+        >
+          <v-img
+            :src="logo_coppe"
+            class="img-footer"
+            max-width="150px"
+            contain
+          />
         </v-col>
       </v-row>
     </footer>
