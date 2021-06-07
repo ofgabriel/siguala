@@ -2,6 +2,7 @@
 FROM node:14-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
+RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
 RUN npm ci
 COPY . .
 RUN npm run build
