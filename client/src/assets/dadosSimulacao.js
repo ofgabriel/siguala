@@ -3,7 +3,7 @@ export default {
     {
       numero: 1,
       nome: 'Equipe de Implementação',
-      descricao: 'Alguma descrição dessa etapa',
+      descricao: '',
       topicos: [
         {
           nome: 'Criação',
@@ -36,7 +36,7 @@ export default {
     {
       numero: 2,
       nome: 'Análise da Empresa',
-      descricao: 'Alguma descrição dessa etapa',
+      descricao: '',
       topicos: [
         {
           nome: 'Análise organizacional com perspectiva de gênero',
@@ -73,7 +73,7 @@ export default {
     {
       numero: 3,
       nome: 'Plano de Ação',
-      descricao: 'Alguma descrição dessa etapa',
+      descricao: '',
       topicos: [
         {
           nome: 'Plano de Ação Organizacional com Perspectiva de Gênero',
@@ -101,7 +101,7 @@ export default {
     {
       numero: 4,
       nome: 'Política de Igualdade de Gênero',
-      descricao: 'Alguma descrição dessa etapa',
+      descricao: '',
       topicos: [
         {
           nome: 'Elaboração da Política de Igualdade de Gênero',
