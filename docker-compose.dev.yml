@@ -3,9 +3,9 @@ services:
   frontend:
     build:
       context: ./client
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile.dev
     ports:
-      - "35000:80"
+      - "8080:8080"
     container_name: selo-frontend
     volumes:
        - ./client:/usr/src/app/client
@@ -20,4 +20,4 @@ services:
     volumes:
       - .:/code
     ports:
-      - "35001:8000"
+      - "8000:8000"
