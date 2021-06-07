@@ -63,6 +63,7 @@ import Formulario from '../components/Formulario.vue';
 import ExibirResultado from '../components/ExibirResultado.vue';
 import CadastroEmpresa from '../components/CadastroEmpresa.vue';
 import dadosSimulacao from '../assets/dadosSimulacao';
+import API from '../api';
 
 export default {
   titulo: 'Selo Diversidade - Simulação',
@@ -76,6 +77,7 @@ export default {
   data() {
     return {
       empresa: null,
+      id: null,
       etapas: dadosSimulacao.etapas,
       etapaAtual: 1,
       resultado: null,
@@ -95,6 +97,7 @@ export default {
   methods: {
     atualizaEtapa(novaEtapa) {
       this.etapaAtual = novaEtapa;
+      this.enviarRespostas();
       document.documentElement.scrollTop = 0;
     },
     adicionaFlags() {
@@ -118,7 +121,27 @@ export default {
     },
     exibeResultado(resultado) {
       this.resultado = resultado;
+      this.enviarRespostas();
       window.scrollTo(0, 0);
+    },
+    enviarRespostas() {
+      const body = {
+        conteudo: {
+          etapaAtual: this.etapaAtual,
+          resultado: this.resultado,
+          etapas: this.etapas,
+        },
+      };
+
+      const id = this.idFormulario;
+      if (id) {
+        const url = `/formulario/simulacao/${id}/`;
+        API.put(url, body).then((r) => { this.idFormulario = r.data.id; });
+        return;
+      }
+
+      const url = '/formulario/simulacao/';
+      API.post(url, body).then((r) => { this.idFormulario = r.data.id; });
     },
   },
 };
