@@ -16,7 +16,10 @@
       cols="12"
       md="3"
     >
-      <v-card flat class="card">
+      <v-card
+        flat
+        class="card"
+      >
         <v-card-title class="pa-0">
           Aceite da  Simulação
         </v-card-title>
@@ -28,26 +31,31 @@
       </v-card>
     </v-col>
     <v-col
-        cols="12"
-        md="3"
-        class="d-md-none"
+      cols="12"
+      md="3"
+      class="d-md-none"
+    >
+      <v-card
+        flat
+        class="card"
       >
-        <v-card flat class="card">
-          <v-card-title class="pa-0">
-            Equipe de Implementação
-          </v-card-title>
-          <v-card-text class="pa-0">
-            Momento de identificação das pessoas ou grupo de responsáveis
-            por ajudar a avaliar a empresa sobre igualdade de gênero.
-
-          </v-card-text>
-        </v-card>
-      </v-col>
+        <v-card-title class="pa-0">
+          Equipe de Implementação
+        </v-card-title>
+        <v-card-text class="pa-0">
+          Momento de identificação das pessoas ou grupo de responsáveis
+          por ajudar a avaliar a empresa sobre igualdade de gênero.
+        </v-card-text>
+      </v-card>
+    </v-col>
     <v-col
       cols="12"
       md="3"
     >
-      <v-card flat class="card">
+      <v-card
+        flat
+        class="card"
+      >
         <v-card-title class="pa-0">
           Análise da Empresa
         </v-card-title>
@@ -60,7 +68,10 @@
       cols="12"
       md="3"
     >
-      <v-card flat class="card">
+      <v-card
+        flat
+        class="card"
+      >
         <v-card-title class="pa-0">
           Política de Igualdade de Gênero
         </v-card-title>
@@ -75,14 +86,16 @@
       md="3"
       class="d-md-none"
     >
-      <v-card flat class="card">
+      <v-card
+        flat
+        class="card"
+      >
         <v-card-title class="pa-0">
           Plano de Ação
         </v-card-title>
         <v-card-text class="pa-0">
           Com o objetivo de diversificar e tornar a empresa cada vez um lugar melhor,
           vamos analisar quais os planos que estão sendo traçados para resolver isso.
-
         </v-card-text>
       </v-card>
     </v-col>
@@ -132,14 +145,16 @@
         md="3"
         class="d-none d-md-block"
       >
-        <v-card flat class="card">
+        <v-card
+          flat
+          class="card"
+        >
           <v-card-title class="pa-0">
             Equipe de Implementação
           </v-card-title>
           <v-card-text class="pa-0">
             Momento de identificação das pessoas ou grupo de responsáveis
             por ajudar a avaliar a empresa sobre igualdade de gênero.
-
           </v-card-text>
         </v-card>
       </v-col>
@@ -148,14 +163,16 @@
         md="3"
         class="d-none d-md-block"
       >
-        <v-card flat class="card">
+        <v-card
+          flat
+          class="card"
+        >
           <v-card-title class="pa-0">
             Plano de Ação
           </v-card-title>
           <v-card-text class="pa-0">
             Com o objetivo de diversificar e tornar a empresa cada vez um lugar melhor,
             vamos analisar quais os planos que estão sendo traçados para resolver isso.
-
           </v-card-text>
         </v-card>
       </v-col>

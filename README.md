@@ -45,8 +45,8 @@
     Na pasta do projeto, execute no terminal:
 
     ```bash
-    $ docker-compose up
-    $ docker-compose up -d #detached mode
+    $ docker-compose -f docker-compose.dev.yml up
+    $ docker-compose -f docker-compose.dev.yml up -d #detached mode
     ```
 
     A versão de desenvolvimento do **Selo Diversidade** está disponível localmente em http://localhost:8080

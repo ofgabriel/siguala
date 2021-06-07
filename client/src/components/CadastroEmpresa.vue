@@ -45,9 +45,9 @@
       </v-btn>
     </v-form>
     <v-alert
+      v-if="erro"
       transition="scale-transition"
       class="alerta"
-      v-if="erro"
       type="error"
     >
       Erro ao salvar informações da empresa. Verifique os campos e tente novamente
