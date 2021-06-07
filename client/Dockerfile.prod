@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN apk update && apk add python g++ make && rm -rf /var/cache/apk/*
 RUN npm run build
 
 # estágio de produção
