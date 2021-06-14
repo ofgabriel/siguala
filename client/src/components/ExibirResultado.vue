@@ -48,15 +48,15 @@ export default {
         },
         1: {
           imagem: imagemSeloOuro,
-          texto: 'Parabéns! Você obteve o selo ouro!',
+          texto: 'Parabéns! Você conquistou o selo ouro!',
         },
         2: {
           imagem: imagemSeloPrata,
-          texto: 'Parabéns! Você obteve o selo prata!',
+          texto: 'Parabéns! Você conquistou o selo prata!',
         },
         3: {
           imagem: imagemSeloBronze,
-          texto: 'Parabéns! Você obteve o selo bronze!',
+          texto: 'Parabéns! Você conquistou o selo bronze!',
         },
 
       },
