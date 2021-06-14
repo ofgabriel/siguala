@@ -60,7 +60,7 @@
           Análise da Empresa
         </v-card-title>
         <v-card-text class="pa-0">
-          A partir de uma visão mais geral da empresa, vamos identificar brechas importantes
+          A partir de uma visão mais geral da empresa, vamos identificar práticas que reforçam a desigualdade
         </v-card-text>
       </v-card>
     </v-col>
@@ -76,8 +76,8 @@
           Política de Igualdade de Gênero
         </v-card-title>
         <v-card-text class="pa-0">
-          Por fim, com o objetivo de integrar a cultura da empresa,
-          vamos desenvolver e melhorar a igualdade de gênero.
+          Por fim com o objetivo de integrar na cultura da empresa essa política
+          de igualdade apoiaremos a implementação de uma política de igualdade de longo prazo.
         </v-card-text>
       </v-card>
     </v-col>
@@ -94,8 +94,9 @@
           Plano de Ação
         </v-card-title>
         <v-card-text class="pa-0">
-          Com o objetivo de diversificar e tornar a empresa cada vez um lugar melhor,
-          vamos analisar quais os planos que estão sendo traçados para resolver isso.
+          Com o objetivo de diversificar e tornar a empresa mais equitativa nos termos das orientações
+          nacionais e internacional vamos analisar e sendo necessário,
+          apoiar a elaboração de um plano para o combate à desigualdade.
         </v-card-text>
       </v-card>
     </v-col>

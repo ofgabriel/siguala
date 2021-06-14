@@ -78,9 +78,9 @@
           md="4"
         >
           <p class="footer-txt">
-            Este projeto é uma iniciativa de professoras e alunos da Faculdade de Direito da UFRJ,
-            membros da Liga de Direito e Tecnologia, e desenvolvido em parceria com alunos da
-            COPPE/UFRJ (Instituto Alberto Luiz Coimbra de Pós-Graduação e Pesquisa de Engenharia).
+            Essa tecnologia é resultado de um projeto de extensão da Liga de Direito e Tecnologia da FND/UFRJ e PESC.
+            Coordenado pelo professor Guilherme Travassos e as professoras
+            Kone Cesário e Ana Lúcia Sabadell da UFRJ e Soraya Gasparetto da UNESP.
           </p>
         </v-col>
         <v-col
