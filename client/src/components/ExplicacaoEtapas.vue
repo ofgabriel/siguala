@@ -60,7 +60,8 @@
           Análise da Empresa
         </v-card-title>
         <v-card-text class="pa-0">
-          A partir de uma visão mais geral da empresa, vamos identificar práticas que reforçam a desigualdade
+          A partir de uma visão mais geral da empresa,
+          vamos identificar práticas que reforçam a desigualdade
         </v-card-text>
       </v-card>
     </v-col>
@@ -94,8 +95,9 @@
           Plano de Ação
         </v-card-title>
         <v-card-text class="pa-0">
-          Com o objetivo de diversificar e tornar a empresa mais equitativa nos termos das orientações
-          nacionais e internacional vamos analisar e sendo necessário,
+          Com o objetivo de diversificar e tornar a empresa mais equitativa
+          nos termos das orientações nacionais e internacional
+          vamos analisar e sendo necessário,
           apoiar a elaboração de um plano para o combate à desigualdade.
         </v-card-text>
       </v-card>

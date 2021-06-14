@@ -78,12 +78,13 @@
           md="4"
         >
           <p class="footer-txt">
-            Essa tecnologia é resultado de um projeto de extensão da Liga de Direito e Tecnologia da FND/UFRJ e PESC.
+            Essa tecnologia é resultado de um projeto de extensão da Liga de Direito
+            e Tecnologia da FND/UFRJ e PESC.
             Coordenado pelo professor Guilherme Travassos e as professoras
             Kone Cesário e Ana Lúcia Sabadell da UFRJ e Soraya Gasparetto da UNESP.
           </p>
         </v-col>
-        <v-col
+        <!-- <v-col
           cols="12"
           md="2"
         >
@@ -104,7 +105,7 @@
             max-width="150px"
             contain
           />
-        </v-col>
+        </v-col> -->
       </v-row>
     </footer>
   </v-app>
