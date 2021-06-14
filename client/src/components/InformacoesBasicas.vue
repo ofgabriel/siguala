@@ -17,7 +17,7 @@
       </h1>
       <h3 class="paragrafo-boas-vindas">
         Empresas que possibilitam um ambiente mais justo para os seus
-        funcionários possuem resultados financeiros mais expressivos.
+        funcionários possuem resultados financeiros e sociais mais expressivos.
       </h3>
       <v-btn
         class="botao-home"

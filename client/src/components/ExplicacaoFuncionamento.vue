@@ -51,7 +51,7 @@
             <h2>Preenchimento do formulário</h2>
           </v-card-subtitle>
           <v-card-text>
-            Após o cadastro, leia atentamente o nosso formulário, divido em quatro etapas,
+            Após o cadastro, leia atentamente o nosso formulário, dividido em quatro etapas,
             e submeta os documentos requisitados.
           </v-card-text>
         </v-card>
