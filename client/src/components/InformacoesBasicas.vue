@@ -8,7 +8,7 @@
   >
     <v-col
       cols="12"
-      md="7"
+      md="9"
       color="secondary"
       class="destaque-texto"
     >
@@ -30,10 +30,11 @@
     </v-col>
     <v-col
       cols="12"
-      md="5"
+      md="3"
     >
       <v-img
         :src="imagem"
+        max-width="498"
       />
     </v-col>
   </v-row>
@@ -65,14 +66,14 @@ export default {
   .header-boas-vindas {
     padding: 30px;
     text-align: left;
-    color: white;
+    color: #302139;
     font-weight: 700;
     font-size: 36px;
     line-height: 56px;
     letter-spacing: 2px;
   }
   .paragrafo-boas-vindas {
-    color: white;
+    color: #302139;
     padding: 30px;
     text-align: left;
     font-weight: 500;
@@ -88,18 +89,18 @@ export default {
     text-align: center;
   }
   .home {
-    background-color: #7C7C7C;
+    background-color: #F3EEEF;
     width:100%;
     text-align: left;
     padding: 24px;
   }
   .home-mob {
-    background-color: #7C7C7C;
+    background-color: #F3EEEF;
     text-align: left;
     width:100%;
   }
   .destaque-texto {
-    max-width: 700px;
+    max-width: 900px;
   }
 
 </style>

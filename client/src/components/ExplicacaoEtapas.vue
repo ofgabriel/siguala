@@ -2,7 +2,7 @@
   <v-row
     justify="space-between"
     align="stretch"
-    class="explicacao explicacao-cards"
+    class="explicacao"
   >
     <v-col
       cols="12"
@@ -102,8 +102,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="12" />
-    <v-row class="d-none d-md-block d-md-flex">
+    <v-row class="d-none d-md-block d-md-flex botoes-explicacao">
       <template
         v-for="i in etapas"
         class="d-flex"
@@ -117,7 +116,6 @@
           x-large
           min-height="140"
           min-width="140"
-          elevation="6"
           plain
         >
           <h2>{{ i }}</h2>
@@ -139,6 +137,7 @@
           height="80"
           auto-draw-duration="4000"
           class="abaixo ml-10 mr-10"
+          color="C4C4C4"
         />
       </v-lazy>
     </v-col>
@@ -211,16 +210,20 @@ export default {
     }
   }
   .abaixo {
-    margin-top:-190px;
+    color: #C4C4C4 !important;
+    margin-top:-220px;
     max-height: 300px;
   }
   .circulo {
-    background-color: white;
+    background-color: #FE8D9B;
   }
   .circulo h2 {
-    color: black;
+    color: white;
     font-size: 60px;
     font-weight: 900;
+  }
+  .v-btn__content {
+    opacity: 1 !important;
   }
   .explicacao {
     text-align: left;
@@ -230,5 +233,8 @@ export default {
   }
   .v-card__text, .v-card__title {
     word-break: normal !important
+  }
+  .botoes-explicacao {
+    margin-top: 45px;
   }
 </style>

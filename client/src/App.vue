@@ -7,16 +7,9 @@
       elevate-on-scroll
       height="80"
     >
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.width <= 700"
-        @click="drawer = true"
-      />
       <router-link :to="{ name: 'Home' }">
-        <v-toolbar-title class="white--text pr-10 menu">
-          <span
-            v-if="$vuetify.breakpoint.width > 700"
-            class="logo"
-          /> Selo de Igualdade de Gênero
+        <v-toolbar-title class="white--text pr-10 menu titulo">
+          Siguala
         </v-toolbar-title>
       </router-link>
       <v-tabs
@@ -75,7 +68,7 @@
       >
         <v-col
           cols="12"
-          md="4"
+          md=""
         >
           <p class="footer-txt">
             Essa tecnologia é resultado de um projeto de extensão da Liga de Direito
@@ -143,9 +136,13 @@ export default {
   height: 100%;
   font-family: Montserrat;
 }
+.menu.titulo {
+  padding-left: 200px;
+  font-size: 30px;
+}
 #footer {
   margin-top:20px;
-  background-color: #D8D8D8;
+  background-color: #F3EEEF;
   flex-shrink: 0;
 }
 .footer-txt {

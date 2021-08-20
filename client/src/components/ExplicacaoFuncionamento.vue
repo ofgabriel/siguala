@@ -3,7 +3,7 @@
     <v-row
       justify="space-around"
       align="center"
-      class="explicacao"
+      class="explicacao explicacao-processo"
     >
       <v-col
         cols="12"
@@ -14,18 +14,20 @@
       </v-col>
     </v-row>
     <v-row
-      class="explicacao-cards"
+      class="primary--text explicacao-cards"
       align="stretch"
     >
       <v-col
-        cols="12"
+        cols="12 explicacao-processo"
         md="3"
       >
         <v-card
-          color="#D8D8D8"
           class="card"
+          elevation="0"
         >
-          <v-card-title class="numero">
+          <v-card-title
+            class="numero"
+          >
             01
           </v-card-title>
           <v-card-subtitle>
@@ -41,8 +43,8 @@
         md="3"
       >
         <v-card
-          color="#D8D8D8"
           class="card"
+          elevation="0"
         >
           <v-card-title class="numero">
             02
@@ -61,8 +63,8 @@
         md="3"
       >
         <v-card
-          color="#D8D8D8"
           class="card"
+          elevation="0"
         >
           <v-card-title class="numero">
             03
@@ -81,8 +83,8 @@
         md="3"
       >
         <v-card
-          color="#D8D8D8"
           class="card"
+          elevation="0"
         >
           <v-card-title class="numero">
             04
@@ -101,13 +103,11 @@
 </template>
 
 <script>
-import imagemHome from '../../public/imagem_home.png';
 
 export default {
   name: 'ExplicacaoEtapas',
   data() {
     return {
-      imagem: imagemHome,
     };
   },
 };
@@ -117,14 +117,16 @@ export default {
   .explicacao {
     padding: 40px 54px 10px 54px;
   }
-  .explicacao-cards {
-    padding: 0 54px 30px 54px;
+  .explicacao-processo {
+    max-width: 1350px;
   }
   .numero {
-    font-weight: 300 !important;
+    font-weight: 500 !important;
     font-size: 18px !important;
+    color: #905BB4;
   }
   .card {
     height: 100%;
+    text-align: left;
   }
 </style>

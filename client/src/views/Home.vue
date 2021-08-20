@@ -2,8 +2,8 @@
   <v-container class="ml-0 mr-0 pa-0 main central">
     <informacoes-basicas />
     <v-coontainer class="ml-auto mr-auto explicacoes">
-      <explicacao-funcionamento />
       <explicacao-etapas />
+      <explicacao-funcionamento />
     </v-coontainer>
   </v-container>
 </template>
@@ -27,7 +27,7 @@ export default {
 <style>
   .explicacoes {
     display: inline-block;
-    max-width: 1000px;
+    max-width: 1350px;
   }
   .central {
     text-align: center
